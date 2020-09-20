@@ -90,11 +90,24 @@ body, html {
    background-size: cover;
 }
 
+.box-carousel{
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 40px;
+   text-align: center;
+   background: url('../images/BG-Carousel.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+
 .bg-body-templo{
    /* The image used */
    background-image:url('../images/Templo1.png');
   /* Full height */
-  height: 100%;
+  height: 60%;
+  width: 100%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -105,7 +118,8 @@ body, html {
    /* The image used */
    background-image:url('../images/Samurai1.png');
   /* Full height */
-  height: 100%;
+  height: 60%;
+  width: 100%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -113,6 +127,14 @@ body, html {
   background-size: cover;
 }
 
-.fixed-top-2{
+.navbars{ 
+   position: fixed;
+}
+
+.nav1{
+   margin-top: 0px;
+}
+
+.nav2{
    margin-top: 55px;
 }

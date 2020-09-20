@@ -13,10 +13,11 @@
 
 <body>
 
+
    <!--Header-->
    <header>
 
-      <nav class="navbar navbar-expand-md navbar-dark bg-brown1 fixed-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
          <div class="container">
 
             <!--LOGO-->
@@ -82,7 +83,7 @@
          </div>
       </nav>
 
-      <nav class="navbar navbar-expand-md navbar-light bg-brown2  fixed-top fixed-top-2">
+      <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
          <div class="container-fluid">
             <!--Lista de produtos-->
             <div class="collapse navbar-collapse">
@@ -97,7 +98,7 @@
                      <a class="nav-link" href="#">Wakizashi</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Tanto</a>
+                     <a class="nav-link" href="#">Tantō</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#">Ninja-tō</a>
@@ -121,11 +122,14 @@
 
    </header>
 
+
+
    <!--Carrossel-->
    <section>
-      <div class="container-fluid mt-5">
+
+      <div class="container-fluid" style="padding-top: 150px;">
          <div class="row justify-content-center">
-            <div class="w-50 h-50">
+            <div class="w-75 h-75">
                <div id="carousel-id" class="carousel slide d-none d-md-block" data-ride="carousel" data-interval="3000">
                   <ol class="carousel-indicators">
                      <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
@@ -158,28 +162,189 @@
             </div>
          </div>
       </div>
+
+
+   </section>
+
+
+   <hr class="my-4">
+
+   <!--Mais vendidos-->
+   <section>
+
+      <div class="container">
+         <h3 class="text-center mb-5">
+            Mais vendidos
+         </h3>
+         <div class="row mb-4">
+            <div class="col-lg-4 col-md-6">
+               <div class="card mb-3">
+                  <img src="assets/images/Katana-venda-1.png" alt="Katana a venda">
+                  <div class="card-body">
+                     <div class="text-center">
+                        <h5 class="card-title">Katana Musashi</h5>
+                     </div>
+                     <p class="card-text text-justify align-content-end">
+                        Preço.</p>
+                  </div>
+               </div>
+            </div>
+   
+            <div class="col-lg-4 col-md-6">
+               <div class="card mb-3">
+                  <img src="assets/images/Katana-venda-2.png" alt="Katana a venda">
+                  <div class="card-body">
+                     <div class="text-center">
+                        <h5 class="card-title">Katana Kojirō</h5>
+                     </div>
+                     <p class="card-text text-justify">
+                        Copacabana que é também conhecida como 
+                        <a href="#"
+                           onclick="return false;"
+                           data-trigger="hover"
+                           data-toggle="tooltip" 
+                           data-placement="top"
+                           data-html="true"
+                           title="<b>Tom Jobim:</b><br>
+                                  Copacabana, princesinha do mar<br>
+                                  Pelas manhãs tu és a vida a cantar<br>
+                                  E a tardinha o sol poente<br>
+                                  Deixa sempre uma saudade na gente">
+                           "Princesinha do Mar"
+                        </a>   
+                        em função de uma famosa canção em sua homenagem, é um dos 
+                        locais mais conhecidos do Brasil e do mundo.
+                     </p>
+                  </div>
+               </div>
+            </div>
+   
+            <div class="col-lg-4 col-md-6">
+               <div class="card mb-3">
+                  <img src="assets/images/Katana-venda-3.png" alt="Katana a venda">
+                  <div class="card-body">
+                     <div class="text-center">
+                        <h5 class="card-title">Katana Matahachi</h5>
+                     </div>
+                     <p class="card-text text-justify">
+                        Entre os principais pontos turísticos da cidade, estão o Corcovado, com a
+                        estátuado Cristo Redentor e o Pão de açucar. Ambos fornecem uma vista
+                        magnifíca da cidade.</p>
+                  </div>
+               </div>
+            </div>
+   
+            <div class="col-lg-4 col-md-6">
+               <div class="card mb-3">
+                  <img src="assets/images/Katana-venda-4.png" alt="Katana a venda">
+                  <div class="card-body">
+                     <div class="text-center">
+                        <h5 class="card-title">Katana Takezō</h5>
+                     </div>
+                     <p class="card-text text-justify">
+                        A Lapa é dos locais noturnos mais conhecidos do Rio. É super democrático, rico
+                        em diversidade e abriga todas as tribos. Lá podemos encontrar bons restaurantes
+                        e bares, alguns com música ao vivo e muita concentração de jovens.</p>
+                  </div>
+               </div>
+            </div>
+   
+            <div class="col-lg-4 col-md-6">
+               <div class="card mb-3">
+                  <img src="assets/images/Kusarigama-venda-1.png" alt="Kusarigama a venda">
+                  <div class="card-body">
+                     <div class="text-center">
+                        <h5 class="card-title">Kusarigama Kohei</h5>
+                     </div>
+                     <p class="card-text text-justify">
+                        Construído para abrigar a Copa do Mundo de 1950, vencida pelo Uruguai, o Maracanã
+                        já foi o maior estádio de futebol do mundo, mas perdeu este status em reforma
+                        recente. Visitá-lo, especialmente em dias de jogos, pode ser algo inesquecível.</p>
+                  </div>
+               </div>
+            </div>
+   
+            <div class="col-lg-4 col-md-6">
+               <div class="card mb-3">
+                  <img src="assets/images/Tanto-venda-1.png" alt="Tantō a venda">
+                  <div class="card-body">
+                     <div class="text-center">
+                        <h5 class="card-title">Tantō Otsū</h5>
+                     </div>
+                     <p class="card-text text-justify">
+                        Localizado no bairro da Urca, o bondinho é uma das principais 
+                        atrações turísticas da cidade. Liga a Praia Vermelha ao morro 
+                        da Urca e ao morro do Pão de açúcar. O bondinho foi cenário 
+                        do filme 
+                        <a href="#"
+                           onclick="return false;"
+                           data-trigger="hover"
+                           data-toggle="popover"
+                           data-title="007 Contra o Foguete da Morte"
+                           data-placement="top"
+                           data-html="true"
+                           data-content="Filme franco-britânico de ação, aventura
+                                         espionagem e ficção científica de 1979, o
+                                         décimo primeiro da série James Bond com 
+                                         <b>Roger Moore</b> no papel do agente 
+                                         secreto.">
+                           007 Contra o Foguete da Morte
+                        </a>, de 1979.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
    </section>
 
    <hr class="my-4">
 
-   <!--??-->
-
-   <hr class="my-4">
    <!--Video com imagem de background-->
    <section>
-      <div class="box-video mt-5">
+      <div class="box-video mt-5 d-none d-md-block">
          <div class="embed-responsive embed-responsive-16by9 w-50 h-50 mr-auto ml-auto">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/TTeutIf-kBA" frameborder="0"
                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-               allowfullscreen></iframe></div>
+               allowfullscreen></iframe>
+         </div>
+      </div>
+
+      <div class="bg-brown2 mt-5 d-md-none" style="padding: 20px;">
+         <div class="embed-responsive embed-responsive-16by9 d-md-none w-80 h-80 mr-auto ml-auto">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TTeutIf-kBA" frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowfullscreen></iframe>
+         </div>
       </div>
    </section>
    <hr class="my-4">
    <!--??-->
 
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
+   <hr class="my-4">
 
 
-   <footer class="footer mt-2">
+   <footer class="footer">
       <div class="container-fluid">
 
          <div class="container-fluid">
@@ -235,7 +400,6 @@
 
 
    </footer>
-
 
 
    <script src="assets/js/jquery-3.3.1.js"></script>
