@@ -138,3 +138,11 @@ body, html {
 .nav2{
    margin-top: 55px;
 }
+
+.dropdown-menu {
+   min-width: 15rem;
+   width: 100%;
+}
+
+.brown-background {background-color:#705737;}
+.white {color:#f3eae0;}
