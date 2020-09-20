@@ -17,7 +17,7 @@
 }
 
 .footer {
-   background-color: #333;
+   background-color: #705737;
    color: #efefef;
    padding: 30px 0;
 }
@@ -67,10 +67,52 @@
 
 }
 
-.bg-black{
-   background: #333;
+body, html {
+   height: 100%;
+ }
+
+.bg-brown1{
+   background: #705737;
+}
+.bg-brown2{
+   background: #f3eae0;
+}
+
+.box-video{
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 40px 0;
+   text-align: center;
+   background: #edcf99 url('../images/SamuraiWallpaper.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.bg-body-templo{
+   /* The image used */
+   background-image:url('../images/Templo1.png');
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-body-samurai{
+   /* The image used */
+   background-image:url('../images/Samurai1.png');
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .fixed-top-2{
-   margin-top: 56px;
+   margin-top: 55px;
 }

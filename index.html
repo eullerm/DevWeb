@@ -16,16 +16,16 @@
    <!--Header-->
    <header>
 
-       <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-brown1 fixed-top">
          <div class="container">
-            
+
             <!--LOGO-->
             <a class="navbar-brand " href="#">
                <img src="/assets/images/katana-logo.png" width="30" height="30" class="d-inline-block align-top"
                   alt="Logotipo loja de katana">
                Katanazada VRAU
             </a>
-   
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -34,28 +34,57 @@
             <div class="collapse navbar-collapse" id="menu">
                <ul class="navbar-nav ml-auto">
 
-                  <!--Barra de busca-->
-                  <form class="form-inline mr-auto">
-                     <div class="md-form mt-0">
-                       <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                       <i class="fas fa-search text-white ml-3" aria-hidden="true"></i>
+                  <!--Barra de busca para dispositivos pequenos-->
+                  <form class="form-inline">
+                     <div class="md-form mt-4 mt-md-0 d-md-none">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        <i class="fas fa-search text-white ml-md-3 mr-md-3" aria-hidden="true"></i>
                      </div>
-                   </form>
-                  
+                  </form>
+
+                  <!--Produtos-->
+                  <li class="nav-item mt-1 mt-md-0 mr-md-3 d-md-none">
+                     <a class="nav-link" href="#">Produtos</a>
+                  </li>
+
+                  <!--Dropdown-->
+                  <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Produtos
+                     </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                     </div>
+                  </li>
+
+                  <!--Barra de busca-->
+                  <form class="form-inline">
+                     <div class="md-form mt-md-0 d-none d-md-block">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        <i class="fas fa-search text-white ml-md-3 mr-md-3" aria-hidden="true"></i>
+                     </div>
+                  </form>
+
                   <!--Carrinho de compra-->
                   <li class="nav-item">
-                     <a href="#" class="nav-link">
-                        <i class="fas fa-shopping-cart"></i>
+                     <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
+                        <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i></i>
                      </a>
                   </li>
+
+
+
                </ul>
             </div>
          </div>
       </nav>
 
-      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top-2">
-         <!--Lista de produtos-->
+      <nav class="navbar navbar-expand-md navbar-light bg-brown2  fixed-top fixed-top-2">
          <div class="container-fluid">
+            <!--Lista de produtos-->
             <div class="collapse navbar-collapse">
                <ul class="navbar-nav mr-auto ml-auto">
                   <li class="nav-item">
@@ -94,7 +123,7 @@
 
    <!--Carrossel-->
    <section>
-      <div class="container mt-5">
+      <div class="container-fluid mt-5">
          <div class="row justify-content-center">
             <div class="w-50 h-50">
                <div id="carousel-id" class="carousel slide d-none d-md-block" data-ride="carousel" data-interval="3000">
@@ -131,12 +160,28 @@
       </div>
    </section>
 
+   <hr class="my-4">
+
+   <!--??-->
+
+   <hr class="my-4">
+   <!--Video com imagem de background-->
+   <section>
+      <div class="box-video mt-5">
+         <div class="embed-responsive embed-responsive-16by9 w-50 h-50 mr-auto ml-auto">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TTeutIf-kBA" frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowfullscreen></iframe></div>
+      </div>
+   </section>
+   <hr class="my-4">
    <!--??-->
 
 
 
    <footer class="footer mt-2">
       <div class="container-fluid">
+
          <div class="container-fluid">
             <div class="row justify-content-around">
                <div class="col-xl-2 col-lg-2 col-sm-4 ">
