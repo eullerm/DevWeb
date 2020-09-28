@@ -1,8 +1,30 @@
-.bgimage {
-   background-image: url('../images/panoramica1.jpg');
-   background-size: cover;
-   background-position: center;
-   height: 350px;
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&display=swap');
+
+nav footer{
+   font-family: 'Alegreya Sans', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+.Quicksand {
+   font-family: 'Quicksand', sans-serif;;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+
+.Dosis{
+   font-family: 'Dosis', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap');
+
+
+.Raleway{
+   font-family: 'Raleway', sans-serif;
+}
+
+.card-text{
+   font-family: 'Raleway', sans-serif;
 }
 
 .tooltip-inner {
@@ -16,8 +38,16 @@
    border-radius: 6%;
 }
 
+.card-body a{
+   color: #000000
+}
+
+.card-body a:hover{
+   color: #000000
+}
+
 .footer {
-   background-color: #705737;
+   background-color: #926f40d3;
    color: #efefef;
    padding: 30px 0;
 }
@@ -28,6 +58,31 @@
 
 .footer a:hover {
    color: #d8e6f3;
+}
+
+.pagination > li > a
+{
+    background-color:white;
+    color: #705737;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #705737;
+    background-color: #f3eae0;
+    border-color: #705737;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:focus{
+   color:  #705737 !important;
+   background-color: #f3eae0 !important;
+   border: solid 1px #705737 !important;
 }
 
 .texto-1 {
@@ -96,7 +151,6 @@ body, html {
    margin: 0;
    padding: 40px;
    text-align: center;
-   background: url('../images/BG-Carousel.jpg');
    background-position: center;
    background-repeat: no-repeat;
    background-size: 100%;
@@ -127,6 +181,16 @@ body, html {
   background-size: cover;
 }
 
+.bg-createuser{
+   background: url('../images/TheSunGirl.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+.bg-translucid{
+   background: #ffffffb4;
+}
+
 .navbars{ 
    position: fixed;
 }
@@ -139,10 +203,34 @@ body, html {
    margin-top: 55px;
 }
 
+.dropdown{
+   position:relative;
+}
+
 .dropdown-menu {
+   position:absolute;
    min-width: 15rem;
    width: 100%;
 }
 
 .brown-background {background-color:#705737;}
-.white {color:#f3eae0;}
+
+.lightBrown {color:#f3eae0;}
+
+.brown{
+   color:#705737;
+}
+
+aside {
+   border-radius: 25px !important;
+   background: #f3eae044 !important;
+   border-style: solid !important;
+   border-color: #705737b7 !important;
+   width: 200px;
+   padding-left: 15px;
+   margin-left: 15px;
+   float: left;
+   font-style: italic;
+   
+ }
+

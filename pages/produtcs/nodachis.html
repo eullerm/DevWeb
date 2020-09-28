@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Loja de katana</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/all.css" rel="stylesheet">
+    <link href="../../assets/css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <!--Header-->
+    <header style="padding-bottom: 50px;">
+
+
+        <!--Filtro para telas pequenas-->
+        <div class="btn-group nav2 fixed-top">
+            <button class="btn bg-brown2 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Filtro
+            </button>
+            <div class="dropdown-menu bg-brown2">
+                <div class="container-fluid">
+                    <div class="row justify-content-between">
+                        <div class="col-6">
+                            <h5>Preço</h5>
+                            <div class="container px-3 py-1">
+                                <div class="slidecontainer pb-2">
+                                    <span>Min</span><br>
+                                    <input type="range" min="1" max="100" value="30" class="slider" id="Size"><br>
+                                    <span>Max</span><br>
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="Size"><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5>Tamanho</h5>
+                            <div class="container px-3 py-1">
+                                <div class="slidecontainer pb-2">
+                                    <span>Min</span><br>
+                                    <input type="range" min="1" max="100" value="30" class="slider" id="Size"><br>
+                                    <span>Max</span><br>
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="Size"><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5>Cores</h5>
+                            <div class="container px-3 py-1 pb-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Preto">
+                                    <label class="form-check-label" for="inlineCheckbox1">Preto</label><br>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                        value="Vermelho">
+                                    <label class="form-check-label" for="inlineCheckbox2">Vermelho</label><br>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Azul">
+                                    <label class="form-check-label" for="inlineCheckbox3">Azul</label><br>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Verde">
+                                    <label class="form-check-label" for="inlineCheckbox3">Verde</label><br>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Lilás">
+                                    <label class="form-check-label" for="inlineCheckbox3">Lilás</label><br>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                        value="Dourado">
+                                    <label class="form-check-label" for="inlineCheckbox3">Dourado</label><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5>Aços</h5>
+                            <div class="container px-3 py-1 pb-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="aço1060">
+                                    <label class="form-check-label" for="inlineCheckbox1">Aço 1060</label>
+                                </div><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                        value="aço1075">
+                                    <label class="form-check-label" for="inlineCheckbox2">Aço 1075</label>
+                                </div><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                        value="açodobrado">
+                                    <label class="form-check-label" for="inlineCheckbox3">Aço Dobrado</label>
+                                </div><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                        value="aço1095">
+                                    <label class="form-check-label" for="inlineCheckbox3">Aço 1095</label>
+                                </div><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açot10">
+                                    <label class="form-check-label" for="inlineCheckbox3">Aço 9260</label>
+                                </div><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                        value="açodamasco">
+                                    <label class="form-check-label" for="inlineCheckbox3">Aço Damasco</label>
+                                </div><br>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
+            <div class="container-fluid">
+                <!--Lista de produtos-->
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="katanas.html">Katana</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Nodachi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Wakizashi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tantō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ninja-tō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shirasaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Daisho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kusarigama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lança</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
+            <div class="container-fluid">
+                <!--LOGO-->
+                <a class="navbar-brand " href="../../index.html">
+                    <img src="../../assets/images/katana-logo.png" width="30" height="30"
+                        class="d-inline-block align-top" alt="Logotipo loja de katana">
+                    Katanazada VRAU
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ml-auto">
+
+                        <!--Barra de busca para dispositivos pequenos-->
+                        <form class="form-inline">
+                            <div class="md-form mt-4 mt-md-0 d-md-none">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+
+                            </div>
+                        </form>
+
+                        <!--Produtos-->
+                        <li class="nav-item mt-1 mt-md-0 mr-md-3 d-md-none">
+                            <a class="nav-link" href="#">Produtos</a>
+                        </li>
+
+                        <!--Minha conta-->
+                        <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
+
+                            <a class="nav-link dropdown-toggle d-md-none" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                Minha conta
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-around">
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="../../pages/user/create/createUser.html">Inscrever-se</a>
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="../user/login/signIn.html">Acessar</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Meus pedidos</a>
+                                <a class="dropdown-item" href="#">Lista de desejos</a>
+                            </div>
+                        </li>
+
+                        <!--Barra de busca-->
+                        <form class="form-inline">
+                            <div class="md-form mt-md-0 d-none d-md-block">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                            </div>
+                        </form>
+
+                        <!--Carrinho de compra-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
+                                <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
+                                <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+    <!--Filtro lateral para telas md+-->
+    <aside class="d-none d-md-block" style="margin-top: 180px; margin-right: 40px;padding: 16px;">
+
+        <h5>Preço</h5>
+        <div class="container px-3 py-1">
+            <div class="slidecontainer pb-5">
+                <span>Min</span>
+                <input type="range" min="1" max="100" value="20" class="slider" id="Price">
+                <span>Max</span>
+                <input type="range" min="1" max="100" value="80" class="slider" id="Price">
+            </div>
+        </div>
+        <h5>Tamanho</h5>
+        <div class="container px-3 py-1">
+            <div class="slidecontainer pb-5">
+                <span>Min</span>
+                <input type="range" min="1" max="100" value="30" class="slider" id="Size">
+                <span>Max</span>
+                <input type="range" min="1" max="100" value="50" class="slider" id="Size">
+            </div>
+        </div>
+        <h5>Cores</h5>
+        <div class="container px-3 py-1 pb-2">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Preto">
+                <label class="form-check-label" for="inlineCheckbox1">Preto</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Vermelho">
+                <label class="form-check-label" for="inlineCheckbox2">Vermelho</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Azul">
+                <label class="form-check-label" for="inlineCheckbox3">Azul</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Verde">
+                <label class="form-check-label" for="inlineCheckbox3">Verde</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Lilás">
+                <label class="form-check-label" for="inlineCheckbox3">Lilás</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Dourado">
+                <label class="form-check-label" for="inlineCheckbox3">Dourado</label><br>
+            </div>
+        </div>
+        <h5>Aços</h5>
+        <div class="container px-3 py-1 pb-2">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="aço1060">
+                <label class="form-check-label" for="inlineCheckbox1">Aço 1060</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="aço1075">
+                <label class="form-check-label" for="inlineCheckbox2">Aço 1075</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açodobrado">
+                <label class="form-check-label" for="inlineCheckbox3">Aço Dobrado</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="aço1095">
+                <label class="form-check-label" for="inlineCheckbox3">Aço 1095</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açot10">
+                <label class="form-check-label" for="inlineCheckbox3">Aço 9260</label><br>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açodamasco">
+                <label class="form-check-label" for="inlineCheckbox3">Aço Damasco</label><br>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!--Carregando-->
+    <section style="height: 100%;">
+
+
+        <div class="container" style="margin-top: 100px;">
+            <h3 class="text-center mb-5 Quicksand">
+                Nodachis
+            </h3>
+            <hr class="my-4">
+            <div class="text-center pb-5">
+                <div class="spinner-border brown" role="status">
+                    <span class="sr-only">Carregando...</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Paginação-->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">
+                        1
+                        <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#"> <i class="fas fa-arrow-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <footer class="footer">
+        <div class="container-fluid">
+
+            <div class="container-fluid">
+                <div class="row justify-content-around">
+                    <div class="col-xl-2 col-lg-2 col-sm-4 ">
+                        <h5>Empresa</h5>
+                        <ul class="list-unstyled">
+                            </i><a href='pages/business/about.html'>Sobre</a></li>
+                            <li><a href='#Empresa'>Institucional</a></li>
+                            <li><a href='#Empresa'>Trabalhe conosco</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-sm-4">
+                        <h5>Ajuda</h5>
+                        <ul class="list-unstyled">
+                            <li><a href='#'>Dúvidas frequentes</a></li>
+                            <li><a href='#'>Atendimentos</a></li>
+                            <li><a href='#'>Mapa do site</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-sm-4">
+                        <h5>Contato</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-user"></i> Euller MACENA</li>
+                            <li><i class="fas fa-phone"></i> (99)99999-9999</li>
+                            <li><i class="fas fa-envelope-square"></i> <a
+                                    href='contato@email.com.br'>contato@email.com.br</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-4">
+                        <h5>Local</h5>
+                        <ul class="list-unstyled">
+                            <li>Lugarnenhum(Knowhere) nº42.</li>
+                            <li>Próximo ao restaurante no fim do universo.</li>
+                            <li><a href='contato@email.com.br'>000-00000xptz</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+
+                    <div class="col-6 col-lg-3">
+                        <img src="../../assets/images/katana-logo.png" width="30" height="30" class="d-inline-block"
+                            alt="Logotipo loja de katana" loading="lazy">
+                        Katanazada VRAU
+                    </div>
+
+                    <div class="col-4 col-lg-3 text-center">
+                        <i class="fab fa-instagram mr-md-4 mr-2" href="#"></i>
+                        <i class="fab fa-facebook mr-md-4 mr-2" href="#"></i>
+                        <i class="fab fa-twitter mr-md-4 mr-2" href="#"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script src="../../assets/js/jquery-3.3.1.js"></script>
+    <script src="../../assets/js/popper.js"></script>
+    <script src="../../assets/js/bootstrap.js"></script>
+    <script src="../../assets/js/script.js"></script>
+
+</body>
+
+</html>

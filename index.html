@@ -15,7 +15,7 @@
 
 
    <!--Header-->
-   <header>
+   <header style="padding-bottom: 50px;">
 
       <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
          <div class="container-fluid">
@@ -23,10 +23,10 @@
             <div class="collapse navbar-collapse">
                <ul class="navbar-nav mr-auto ml-auto">
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Katana</a>
+                     <a class="nav-link" href="pages/produtcs/katanas.html">Katana</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Nodachi</a>
+                     <a class="nav-link " href="/pages/produtcs/nodachis.html">Nodachi</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#">Wakizashi</a>
@@ -55,11 +55,10 @@
       </nav>
 
       <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
-         <div class="container">
-
+         <div class="container-fluid">
             <!--LOGO-->
             <a class="navbar-brand " href="#">
-               <img src="/assets/images/katana-logo.png" width="30" height="30" class="d-inline-block align-top"
+               <img src="assets/images/katana-logo.png" width="30" height="30" class="d-inline-block align-top"
                   alt="Logotipo loja de katana">
                Katanazada VRAU
             </a>
@@ -75,8 +74,8 @@
                   <!--Barra de busca para dispositivos pequenos-->
                   <form class="form-inline">
                      <div class="md-form mt-4 mt-md-0 d-md-none">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                        <i class="fas fa-search text-white ml-md-3 mr-md-3" aria-hidden="true"></i>
+                        <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+
                      </div>
                   </form>
 
@@ -87,15 +86,23 @@
 
                   <!--Minha conta-->
                   <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+
+                     <a class="nav-link dropdown-toggle d-md-none" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i>
+                     </a>
+                     <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i>
                         Minha conta
                      </a>
                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div class="container-fluid">
                            <div class="row justify-content-around">
-                              <button type="button" class="btn btn-primary brown-background brown-button-letters">Inscrever-se</button>
-                              <button type="button" class="btn btn-primary brown-background brown-button-letters">Acessar</button>
+                              <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                 href="pages/user/create/createUser.html">Inscrever-se</a>
+                              <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                 href="pages/user/login/signIn.html">Acessar</a>
                            </div>
                         </div>
                         <div class="dropdown-divider"></div>
@@ -107,21 +114,32 @@
                   <!--Barra de busca-->
                   <form class="form-inline">
                      <div class="md-form mt-md-0 d-none d-md-block">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                        <i class="fas fa-search text-white ml-md-3 mr-md-3" aria-hidden="true"></i>
+                        <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
                      </div>
                   </form>
 
                   <!--Carrinho de compra-->
                   <li class="nav-item">
                      <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
-                        <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i></i>
+                        <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
+                        <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
                      </a>
                   </li>
-
-
-
                </ul>
+            </div>
+         </div>
+
+         <!--Toast-->
+         <div class="toast" id="myToast" style="position: absolute; top: 100%; right: 8%;">
+            <div class="toast-header">
+               <strong class="mr-auto"><i class="fa fa-grav"></i>Katana</strong>
+               <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="toast-body">
+               <div>Produto adicionado ao carrinho com sucesso
+               </div>
             </div>
          </div>
       </nav>
@@ -133,7 +151,7 @@
    <!--Carrossel-->
    <section>
 
-      <div class="container-fluid" style="padding-top: 150px;">
+      <div class="container-fluid" style="padding-top: 100px;">
          <div class="row justify-content-center">
             <div class="w-75 h-75">
                <div id="carousel-id" class="carousel slide d-none d-md-block" data-ride="carousel" data-interval="3000">
@@ -188,90 +206,122 @@
 
    </section>
 
-
-   <hr class="my-4">
+   <hr class="my-4 d-none d-sm-block">
 
    <!--Mais vendidos-->
    <section>
 
       <div class="container">
-         <h3 class="text-center mb-5">
+         <h3 class="text-center mb-5 Dosis">
             Mais vendidos
          </h3>
          <div class="row mb-4">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                <div class="card mb-3">
                   <img src="assets/images/Katana-venda-1.png" alt="Katana a venda">
                   <div class="card-body ">
                      <div class="text-center">
-                        <h5 class="card-title">Katana Musashi</h5>
+                        <a href="pages/produtcs/specificProduct/specificProduct.html"><h5 class="card-title">Katana Musashi</h5></a>   
                      </div>
-                     <p class="card-text">
-                        R$2.</p>
+                     <hr class="my-4">
+                     <div class="row justify-content-between px-3">
+                        <a class="show-toast" href="#">
+                           <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                        </a>
+                        <p class="card-text">
+                           R$569.</p>
+                     </div>
                   </div>
                </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                <div class="card mb-3">
                   <img src="assets/images/Katana-venda-2.png" alt="Katana a venda">
                   <div class="card-body">
                      <div class="text-center">
-                        <h5 class="card-title">Katana Kojirō</h5>
+                           <h5 class="card-title">Katana Kojirō</h5>
                      </div>
-                     <p class="card-text">
-                        R$2.</p>
+                     <hr class="my-4">
+                     <div class="row justify-content-between px-3">
+                        <a class="show-toast">
+                           <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                        </a>
+                        <p class="card-text">
+                           R$569.</p>
+                     </div>
                   </div>
                </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                <div class="card mb-3">
                   <img src="assets/images/Katana-venda-3.png" alt="Katana a venda">
                   <div class="card-body">
                      <div class="text-center">
                         <h5 class="card-title">Katana Matahachi</h5>
                      </div>
-
-                     <p class="card-text">
-                        R$2.</p>
+                     <hr class="my-4">
+                     <div class="row justify-content-between px-3">
+                                                <a class="show-toast" >
+                           <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                        </a>
+                        <p class="card-text">
+                           R$569.</p>
+                     </div>
                   </div>
                </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                <div class="card mb-3">
                   <img src="assets/images/Katana-venda-4.png" alt="Katana a venda">
                   <div class="card-body">
                      <div class="text-center">
                         <h5 class="card-title">Katana Takezō</h5>
                      </div>
-
-                     <p class="card-text">
-                        R$2.</p>
+                     <hr class="my-4">
+                     <div class="row justify-content-between px-3">
+                                                <a class="show-toast" >
+                           <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                        </a>
+                        <p class="card-text">
+                           R$569.</p>
+                     </div>
                   </div>
                </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                <div class="card mb-3">
                   <img src="assets/images/Kusarigama-venda-1.png" alt="Kusarigama a venda">
                   <div class="card-body">
                      <div class="text-center">
                         <h5 class="card-title">Kusarigama Kohei</h5>
                      </div>
-
-                     <p class="card-text">
-                        R$2.</p>
+                     <hr class="my-4">
+                     <div class="row justify-content-between px-3">
+                                                <a class="show-toast" >
+                           <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                        </a>
+                        <p class="card-text">
+                           R$569.</p>
+                     </div>
                   </div>
                </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                <div class="card mb-3">
                   <img src="assets/images/Tanto-venda-1.png" alt="Tantō a venda">
                   <div class="card-body">
                      <div class="text-center">
                         <h5 class="card-title">Tantō Otsū</h5>
                      </div>
-                     <p class="card-text">
-                        R$2.</p>
+                     <hr class="my-4">
+                     <div class="row justify-content-between px-3">
+                                                <a class="show-toast" >
+                           <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                        </a>
+                        <p class="card-text">
+                           R$569.</p>
+                     </div>
                   </div>
                </div>
             </div>
@@ -292,6 +342,7 @@
          </div>
       </div>
 
+      <!--Video para telas menores-->
       <div class="bg-brown2 mt-5 d-md-none" style="padding: 20px;">
          <div class="embed-responsive embed-responsive-16by9 d-md-none w-80 h-80 mr-auto ml-auto">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/TTeutIf-kBA" frameborder="0"
@@ -300,46 +351,24 @@
          </div>
       </div>
    </section>
-   <hr class="my-4">
-   <!--??-->
-
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
-   <hr class="my-4">
 
 
+   <!--Rodapé-->
    <footer class="footer">
       <div class="container-fluid">
 
          <div class="container-fluid">
             <div class="row justify-content-around">
-               <div class="col-xl-2 col-lg-2 col-sm-4 ">
+               <div class="col-xl-2 col-lg-2 col-sm-5 ">
                   <h5>Empresa</h5>
                   <ul class="list-unstyled">
-                     </i><a href='#Empresa'>Informações da empresa</a></li>
+                     </i><a href='pages/business/about.html'>Sobre</a></li>
                      <li><a href='#Empresa'>Institucional</a></li>
                      <li><a href='#Empresa'>Trabalhe conosco</a></li>
                   </ul>
                </div>
 
-               <div class="col-xl-2 col-lg-2 col-sm-4">
+               <div class="col-xl-2 col-lg-2 col-sm-5">
                   <h5>Ajuda</h5>
                   <ul class="list-unstyled">
                      <li><a href='#'>Dúvidas frequentes</a></li>
@@ -348,12 +377,21 @@
                   </ul>
                </div>
 
-               <div class="col-xl-2 col-lg-3 col-sm-4">
+               <div class="col-xl-2 col-lg-3 col-sm-5">
                   <h5>Contato</h5>
                   <ul class="list-unstyled">
                      <li><i class="fas fa-user"></i> Euller MACENA</li>
                      <li><i class="fas fa-phone"></i> (99)99999-9999</li>
                      <li><i class="fas fa-envelope-square"></i> <a href='contato@email.com.br'>contato@email.com.br</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-sm-5">
+                  <h5>Local</h5>
+                  <ul class="list-unstyled">
+                     <li>Lugarnenhum(Knowhere) nº42.</li>
+                     <li>Próximo ao restaurante no fim do universo.</li>
+                     <li><a href='contato@email.com.br'>000-00000xptz</a>
                      </li>
                   </ul>
                </div>
@@ -364,7 +402,7 @@
             <div class="row justify-content-between">
 
                <div class="col-6 col-lg-3">
-                  <img src="/assets/images/katana-logo.png" width="30" height="30" class="d-inline-block"
+                  <img src="assets/images/katana-logo.png" width="30" height="30" class="d-inline-block"
                      alt="Logotipo loja de katana" loading="lazy">
                   Katanazada VRAU
                </div>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Loja de katana</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/all.css" rel="stylesheet">
+    <link href="../../../assets/css/styles.css" rel="stylesheet">
+
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <!--Header-->
+    <header style="padding-bottom: 50px;">
+
+        <!--Filtro para telas pequenas-->
+        <div class="btn-group nav2 fixed-top">
+            <button class="btn bg-brown2 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Filtro
+            </button>
+            <div class="dropdown-menu bg-brown2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>Preço</h5>
+                            <div class="container px-3 py-1">
+                                <div class="slidecontainer pb-2">
+                                    <input type="range" min="1" max="100" value="80" class="slider" id="myRange">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5>Tamanho</h5>
+                            <div class="container px-3 py-1">
+                                <div class="slidecontainer pb-2">
+                                    <input type="range" min="1" max="100" value="20" class="slider" id="myRange">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5>Cores</h5>
+                                <div class="container px-3 py-1 pb-2">
+                                    <input type="radio" id="yellow" name="color" value="yellow">
+                                    <label for="yellow">Amarelo</label><br>
+                                    <input type="radio" id="red" name="color" value="red">
+                                    <label for="red">Vermelho</label><br>
+                                    <input type="radio" id="black" name="color" value="black">
+                                    <label for="black">Preto</label><br>
+                                    <input type="radio" id="blue" name="color" value="blue">
+                                    <label for="blue">Azul</label><br>
+                                    <input type="radio" id="grey" name="color" value="grey">
+                                    <label for="grey">Cinza</label><br>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h5>Aços</h5>
+                                <div class="container px-3 py-1 pb-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="aço1060">
+                                        <label class="form-check-label" for="inlineCheckbox1">Aço 1060</label>
+                                    </div><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                            value="aço1075">
+                                        <label class="form-check-label" for="inlineCheckbox2">Aço 1075</label>
+                                    </div><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                            value="açodobrado">
+                                        <label class="form-check-label" for="inlineCheckbox3">Aço Dobrado</label>
+                                    </div><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                            value="aço1095">
+                                        <label class="form-check-label" for="inlineCheckbox3">Aço 1095</label>
+                                    </div><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                            value="açot10">
+                                        <label class="form-check-label" for="inlineCheckbox3">Aço 9260</label>
+                                    </div><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                            value="açodamasco">
+                                        <label class="form-check-label" for="inlineCheckbox3">Aço Damasco</label>
+                                    </div><br>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
+            <div class="container-fluid">
+                <!--Lista de produtos-->
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../katanas.html">Katana</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Nodachi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Wakizashi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tantō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ninja-tō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shirasaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Daisho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kusarigama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lança</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
+            <div class="container-fluid">
+                <!--LOGO-->
+                <a class="navbar-brand " href="../../../index.html">
+                    <img src="../../../assets/images/katana-logo.png" width="30" height="30"
+                        class="d-inline-block align-top" alt="Logotipo loja de katana">
+                    Katanazada VRAU
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ml-auto">
+
+                        <!--Barra de busca para dispositivos pequenos-->
+                        <form class="form-inline">
+                            <div class="md-form mt-4 mt-md-0 d-md-none">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+
+                            </div>
+                        </form>
+
+                        <!--Produtos-->
+                        <li class="nav-item mt-1 mt-md-0 mr-md-3 d-md-none">
+                            <a class="nav-link" href="#">Produtos</a>
+                        </li>
+
+                        <!--Minha conta-->
+                        <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
+
+                            <a class="nav-link dropdown-toggle d-md-none" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                Minha conta
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-around">
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="../../../pages/user/create/createUser.html">Inscrever-se</a>
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="../../user/login/signIn.html">Acessar</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Meus pedidos</a>
+                                <a class="dropdown-item" href="#">Lista de desejos</a>
+                            </div>
+                        </li>
+
+                        <!--Barra de busca-->
+                        <form class="form-inline">
+                            <div class="md-form mt-md-0 d-none d-md-block">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                            </div>
+                        </form>
+
+                        <!--Carrinho de compra-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
+                                <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
+                                <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Toast-->
+            <div class="toast" id="myToast" style="position: absolute; top: 100%; right: 8%;">
+                <div class="toast-header">
+                    <strong class="mr-auto"><i class="fa fa-grav"></i>Katana Musashi</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <div>Produto adicionado ao carrinho com sucesso
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Pergunta de favorito-->
+    <div class="modal fade" id="favorite" tabindex="-1" aria-labelledby="favoriteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="favoriteModalLabel">Favoritado</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    O item foi adicionado a sua lista de favoritos.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-brown2 brown" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn bg-brown1 lightBrown">Exibir sua Lista</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Produto-->
+    <section>
+        <div class="container-fluid p-5" style="margin-top: 100px;">
+
+            <!--Produto para telas md+-->
+            <div class="card d-none d-md-block mr-auto ml-auto bg-translucid shadow-lg">
+                <div class="card-body">
+
+                    <h2 class="card-title Dosis text-center pt-1 pb-5">Katana Musashi</h2>
+
+                    <div class="row px-3">
+                        <div class="container col-6">
+                            <div class="fotorama">
+                                <img src="../../../assets/images/Katana-carousel-exhibition1.jpg" alt=""
+                                    class="img-fluid">
+                                <img src="../../../assets/images/Katana-carousel-exhibition1.jpg" alt=""
+                                    class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="container text-justify Dosis col-6">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dui sit amet
+                                urna sodales
+                                convallis at sed risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Suspendisse non dui sit amet
+                                urna sodales
+                                convallis at sed risus.
+                            </p>
+                        </div>
+
+                        <h5 class="container col-12 text-right pt-4 Raleway">R$156123<a class="show-toast" href="#"><i
+                                    class="fa fa-shopping-cart px-3 align-self-center" style="font-size:20px;"></i></a>
+                        </h5>
+
+                        <div class="container text-justify Dosis pt-5">
+                            <hr class="my-4">
+                            <h5 class="Dosis">Descrição</h5>
+                            <p class="px-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dui sit amet
+                                urna sodales
+                                convallis at sed risus. Donec faucibus ut lacus a aliquam. Ut ex mi, iaculis a auctor
+                                et, venenatis
+                                et mauris. Aliquam ultrices lorem vel arcu tincidunt condimentum. Vivamus tortor lorem,
+                                molestie at
+                                mi et, malesuada mollis arcu. Ut sodales ornare pulvinar. Mauris sed turpis enim. Etiam
+                                suscipit
+                                elit felis, vitae faucibus sem malesuada eget. Phasellus vulputate, tortor porta
+                                tincidunt mattis,
+                                erat turpis imperdiet erat, et fringilla enim nisl sed neque. Etiam porttitor elementum
+                                leo quis
+                                tempus. Duis vel nunc eget est iaculis consectetur et vitae nisi. Etiam ornare ornare
+                                nunc,
+                                consectetur sagittis magna gravida quis. Phasellus condimentum est eget nibh tempor
+                                aliquet. Vivamus
+                                egestas dictum risus sit amet pharetra. Suspendisse vehicula justo at sem efficitur
+                                condimentum.
+                            </p>
+                        </div>
+                        <div class="container col-12 text-right pt-4">
+                            <h5 class="Quicksand">
+                                <a data-toggle="modal" data-target="#favorite" href="">
+                                    Favoritar
+                                    <i class="fa fa-star px-3" style="font-size:20px;"></i>
+                                </a>
+                            </h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Produto para telas sm- -->
+            <div class="card d-md-none mr-auto ml-auto bg-translucid shadow-lg">
+                <div class="card-body">
+
+                    <h2 class="card-title Dosis text-center pt-1 pb-5">Katana Musashi</h2>
+
+                    <div class="row px-3">
+
+                        <div class="fotorama">
+                            <img src="../../../assets/images/Katana-carousel-exhibition1.jpg" alt="" class="img-fluid">
+                            <img src="../../../assets/images/Katana-carousel-exhibition1.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <p class="pt-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dui sit amet
+                            urna sodales
+                            convallis at sed risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Suspendisse non dui sit amet
+                            urna sodales
+                            convallis at sed risus.
+                        </p>
+
+
+                        <h5 class=" container col-12 text-right pt-4 Raleway">R$156123<a class="show-toast"><i
+                                    class="fa fa-shopping-cart px-3" style="font-size:20px;"></i></a></h5>
+
+                        <div class="container text-justify Dosis pt-5">
+                            <hr class="my-4">
+                            <h5 class="Dosis">Descrição</h5>
+                            <p class="px-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dui sit amet
+                                urna sodales
+                                convallis at sed risus. Donec faucibus ut lacus a aliquam. Ut ex mi, iaculis a auctor
+                                et, venenatis
+                                et mauris. Aliquam ultrices lorem vel arcu tincidunt condimentum. Vivamus tortor lorem,
+                                molestie at
+                                mi et, malesuada mollis arcu. Ut sodales ornare pulvinar. Mauris sed turpis enim. Etiam
+                                suscipit
+                                elit felis, vitae faucibus sem malesuada eget. Phasellus vulputate, tortor porta
+                                tincidunt mattis,
+                                erat turpis imperdiet erat, et fringilla enim nisl sed neque. Etiam porttitor elementum
+                                leo quis
+                                tempus. Duis vel nunc eget est iaculis consectetur et vitae nisi. Etiam ornare ornare
+                                nunc,
+                                consectetur sagittis magna gravida quis. Phasellus condimentum est eget nibh tempor
+                                aliquet. Vivamus
+                                egestas dictum risus sit amet pharetra. Suspendisse vehicula justo at sem efficitur
+                                condimentum.
+                            </p>
+                        </div>
+
+                        <h5 class=" container col-12 text-right pt-4 Raleway">R$156123<a class="show-toast"><i
+                                    class="fa fa-shopping-cart px-3" style="font-size:20px;"></i></a></h5>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+
+            <div class="container-fluid">
+                <div class="row justify-content-around">
+                    <div class="col-xl-2 col-lg-2 col-sm-3 ">
+                        <h5>Empresa</h5>
+                        <ul class="list-unstyled">
+                            </i><a href='pages/business/about.html'>Sobre</a></li>
+                            <li><a href='#Empresa'>Institucional</a></li>
+                            <li><a href='#Empresa'>Trabalhe conosco</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-sm-3">
+                        <h5>Ajuda</h5>
+                        <ul class="list-unstyled">
+                            <li><a href='#'>Dúvidas frequentes</a></li>
+                            <li><a href='#'>Atendimentos</a></li>
+                            <li><a href='#'>Mapa do site</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-sm-3">
+                        <h5>Contato</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-user"></i> Euller MACENA</li>
+                            <li><i class="fas fa-phone"></i> (99)99999-9999</li>
+                            <li><i class="fas fa-envelope-square"></i> <a
+                                    href='contato@email.com.br'>contato@email.com.br</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-3">
+                        <h5>Local</h5>
+                        <ul class="list-unstyled">
+                            <li>Lugarnenhum(Knowhere) nº42.</li>
+                            <li>Próximo ao restaurante no fim do universo.</li>
+                            <li><a href='contato@email.com.br'>000-00000xptz</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+
+                    <div class="col-6 col-lg-3">
+                        <img src="../../../assets/images/katana-logo.png" width="30" height="30" class="d-inline-block"
+                            alt="Logotipo loja de katana" loading="lazy">
+                        Katanazada VRAU
+                    </div>
+
+                    <div class="col-4 col-lg-3 text-center">
+                        <i class="fab fa-instagram mr-md-4 mr-2" href="#"></i>
+                        <i class="fab fa-facebook mr-md-4 mr-2" href="#"></i>
+                        <i class="fab fa-twitter mr-md-4 mr-2" href="#"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script src="../../../assets/js/jquery-3.3.1.js"></script>
+    <script src="../../../assets/js/popper.js"></script>
+    <script src="../../../assets/js/bootstrap.js"></script>
+    <script src="../../../assets/js/script.js"></script>
+
+</body>
+
+</html>
