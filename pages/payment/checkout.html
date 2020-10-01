@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Loja de katana</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/all.css" rel="stylesheet">
+    <link href="../../../assets/css/styles.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+    <!--Header-->
+    <header style="padding-bottom: 50px;">
+
+
+        <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
+            <div class="container-fluid">
+                <!--Lista de produtos-->
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../produtcs/katanas.html">Katana</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../produtcs/nodachis.html">Nodachi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Wakizashi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tantō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ninja-tō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shirasaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Daisho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kusarigama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lança</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
+            <div class="container">
+
+                <!--LOGO-->
+                <a class="navbar-brand " href="../../../index.html">
+                    <img src="../../../assets/images/katana-logo.png" width="30" height="30"
+                        class="d-inline-block align-top" alt="Logotipo loja de katana">
+                    Katanazada VRAU
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ml-auto">
+
+                        <!--Barra de busca para dispositivos pequenos-->
+                        <form class="form-inline">
+                            <div class="md-form mt-4 mt-md-0 d-md-none">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                            </div>
+                        </form>
+
+                        <!--Produtos-->
+                        <li class="nav-item mt-1 mt-md-0 mr-md-3 d-md-none">
+                            <a class="nav-link" href="#">Produtos</a>
+                        </li>
+
+                        <!--Minha conta-->
+                        <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
+                            <a class="nav-link dropdown-toggle d-md-none" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                Minha conta
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-around">
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="pages/user/create/createUser.html">Inscrever-se</a>
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="../login/signIn.html">Acessar</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Meus pedidos</a>
+                                <a class="dropdown-item" href="#">Lista de desejos</a>
+                            </div>
+                        </li>
+
+                        <!--Barra de busca-->
+                        <form class="form-inline">
+                            <div class="md-form mt-md-0 d-none d-md-block">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                            </div>
+                        </form>
+
+                        <!--Carrinho de compra-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
+                                <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
+                                <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!--Formulario para finalizar a compra-->
+    <section>
+
+        <div class="container-fluid p-5" style="margin-top: 100px;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 order-md-2 mb-4">
+                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted">Seu carrinho</span>
+                            <span class="badge badge-secondary badge-pill">3</span>
+                        </h4>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                <div>
+                                    <h6 class="my-0">Katana Musashi</h6>
+                                    <small class="text-muted">Aço Damasco</small>
+                                </div>
+                                <span class="text-muted">R$42</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                <div>
+                                    <h6 class="my-0">Kusarigama Kohei</h6>
+                                    <small class="text-muted">Aço 1060</small>
+                                </div>
+                                <span class="text-muted">R$42</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                <div>
+                                    <h6 class="my-0">Tanto Otsu</h6>
+                                    <small class="text-muted">Aço Damasco</small>
+                                </div>
+                                <span class="text-muted">R$42</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between bg-light">
+                                <div class="text-success">
+                                    <h6 class="my-0">Codigo promocional</h6>
+                                    <small>Pague4leve3</small>
+                                </div>
+                                <span class="text-success">+$42</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Total</span>
+                                <strong>R$168</strong>
+                            </li>
+                        </ul>
+
+                        <form class="card p-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Codigo promocional">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-secondary">Confirmar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3">Finalizar compra</h4>
+                        <form class="needs-validation" novalidate="">
+
+                            <div class="mb-3">
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control" id="name" placeholder="" value=""
+                                    required="">
+                                <div class="invalid-feedback">
+                                    Campo requerido.
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="address">Endereço de entrega</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Disc World 42"
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="complement">Complemento</label>
+                                    <input type="text" class="form-control" id="complement">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5 mb-3">
+                                    <label for="state">Estado</label>
+                                    <select class="custom-select d-block w-100" id="state" required="">
+                                        <option value="">...</option>
+                                        <option value="IJU">IJU</option>
+                                        <option value="ST">ST</option>
+                                        <option value="WAN">WAN</option>
+                                        <option value="NA">NA</option>
+                                        <option value="DIE">DIE</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Selecione um estado valido.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="county">Municipio</label>
+                                    <input type="text" class="form-control" id="county" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="zip">CEP</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="same-address" id="same-address" checked="" required="">
+                                <label class="custom-control-label" for="same-address">Endereço de cobrança é o mesmo do
+                                    de entrega</label>
+                            </div>
+
+                            <hr class="mb-4">
+
+                            <h4 class="mb-3">Pagamento</h4>
+
+                            <div class="row my-3 mx-2">
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        checked="" required="">
+                                    <label class="custom-control-label" for="credit">Cartão de crédito</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="debit">Cartão de debito</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="paypal">Paypal</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="boleto" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="boleto">Boleto</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="transference" name="paymentMethod" type="radio"
+                                        class="custom-control-input" required="">
+                                    <label class="custom-control-label" for="transference">Transferência bancária
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-name">Nome no cartão</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                    <small class="text-muted">Nome do jeito que esta no cartão de crédito</small>
+                                    <div class="invalid-feedback">
+                                        Nome no cartão de crédito requerido.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-number">Número no cartão</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Número do cartão de crédito requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">Validade</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder=""
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Validade requeridaa.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Codigo de segurança requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="recieve-email">
+                                <label class="custom-control-label" for="recieve-email">Receber email com promoções futuras</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="NF-e">
+                                <label class="custom-control-label" for="NF-e">Receber NF-e</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save-info">
+                                <label class="custom-control-label" for="save-info">Salvar dados para compras
+                                    futuras</label>
+                            </div>
+                            <hr class="mb-4">
+                            <button class="btn btn-primary btn-lg btn-block" type="button" id="submit">Confirmar compra</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="../../../assets/js/jquery-3.3.1.js"></script>
+    <script src="../../../assets/js/popper.js"></script>
+    <script src="../../../assets/js/bootstrap.js"></script>
+    <script src="../../../assets/js/script.js"></script>
+
+</body>
+
+</html>
