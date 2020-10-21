@@ -14,7 +14,7 @@ $(function () {
       $('#myInput').trigger('focus')
    })
 
-   $("#submit").click(function () {
+   $("#confirmPayment").click(function () {
 
       let name_valid = validNameFunction()
       let address_valid = validAddressFunction()
@@ -37,6 +37,73 @@ $(function () {
          alert("Deu erro!")
       }
 
+   })
+
+   $("i.fa-thumbs-up, i.fa-thumbs-down").click(function(){
+      if($(this).hasClass("fa-thumbs-up")){
+
+         if($(this).hasClass("far")){
+         
+            $(this).removeClass("far ").addClass("fas")
+            let idLike = $(this).parent().children("span:eq(0)").attr('id')
+            let like = $("#"+idLike).data("like")
+            $("#"+idLike).text(like+1)
+
+            $(this).parent().parent().children("div:eq(1)").children("i:eq(0)").removeClass("fas ").addClass("far ")
+            let idDislike = $(this).parent().parent().children("div:eq(1)").children("span:eq(0)").attr('id')
+            
+            let dislike = $("#"+idDislike).data("dislike")
+            $("#"+idDislike).text(dislike)
+         
+         }else{
+
+            $(this).removeClass("fas").addClass("far")
+            let idLike = $(this).parent().children("span:eq(0)").attr('id')
+            let like = $("#"+idLike).data("like")
+            $("#"+idLike).text(like)
+
+         }
+
+      }else if($(this).hasClass("fa-thumbs-down")){
+
+         if($(this).hasClass("far")){
+
+            $(this).removeClass("far ").addClass("fas")
+
+            let idDislike = $(this).parent().children("span:eq(0)").attr('id')
+            let dislike = $("#"+idDislike).data("dislike")
+            $("#"+idDislike).text(dislike+1)
+
+            $(this).parent().parent().children("div:eq(0)").children("i:eq(0)").removeClass("fas ").addClass("far ")
+            let idLike = $(this).parent().parent().children("div:eq(0)").children("span:eq(0)").attr('id')
+            console.log(idLike)
+            let like = $("#"+idLike).data("like")
+            $("#"+idLike).text(like)
+
+         }else{
+
+            $(this).removeClass("fas").addClass("far")
+            let idDislike = $(this).parent().children("span:eq(0)").attr('id')
+            let dislike = $("#"+idDislike).data("dislike")
+            $("#"+idDislike).text(dislike)
+
+         }
+
+      }
+   })
+
+   $("i.fa-thumbs-up").each(function(index){
+      let id = $(this).parent().children("span:eq(0)").attr('id')
+
+      let text = $("#"+id).data("like")
+      $("#"+id).text(text)
+   })
+
+   $("i.fa-thumbs-down").each(function(index){
+      let id = $(this).parent().children("span:eq(0)").attr('id')    
+
+      let text = $("#"+id).data("dislike")
+      $("#"+id).text(text)
    })
 
 })
@@ -124,18 +191,18 @@ function validZipFunction() {
 
 }
 
-function validSameAddressFunction(){
+function validSameAddressFunction() {
 
    let sameAddress = $("#same-address")
 
    let button = $("input[name='same-address']:checked")
 
-   if(button.length === 0){
+   if (button.length === 0) {
 
       sameAddress.addClass("is-invalid")
       sameAddress.removeClass("is-valid")
       return false
-   }else{
+   } else {
       sameAddress.addClass("is-valid")
       sameAddress.removeClass("is-invalid")
       return true

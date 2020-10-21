@@ -150,8 +150,16 @@
 
    <!--Carrossel-->
    <section>
-
       <div class="container-fluid" style="padding-top: 100px;">
+         <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
+            <div class="card-body">
+               <h5 class="card-title text-center">Trabalho 3</h5>
+               <p class="card-text">
+               <h6 class="card-subtitle mb-2 text-muted">Likes e Dislikes no final da página.</h6>
+               </p>
+            </div>
+         </div>
+
          <div class="row justify-content-center">
             <div class="w-75 h-75">
                <div id="carousel-id" class="carousel slide d-none d-md-block" data-ride="carousel" data-interval="3000">
@@ -202,8 +210,6 @@
             </div>
          </div>
       </div>
-
-
    </section>
 
    <hr class="my-4 d-none d-sm-block">
@@ -354,46 +360,162 @@
       </div>
    </section>
 
-   <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
-      <div class="card-body">
-         <h5 class="card-title text-center">Componentes adicionados ao trabalho</h5>
-         <p class="card-text">
-         <h6 class="card-subtitle mb-2 text-muted">Pagination -></h6> Da página inicial clicando em Katana ou em Nodachi
-         é possível ver esse
-         componente.
-         </p>
-         <p class="card-text">
-         <h6 class="card-subtitle mb-2 text-muted">Ranger Input -> </h6>
-         Da página inicial clicando em Katana ou em Nodachi é possível ver esse
-         componente que futuramente servirá para filtrar preços e tamanhos.
+   <hr class="my-4">
 
-         </p>
-         <p class="card-text">
-         <h6 class="card-subtitle mb-2 text-muted">Badge -> </h6>
-         Fica ao lado do carrinho de compra indicando quantos produtos tem no carrinho.
+   <!--Comentarios-->
+   <section>
+      <div class="container-fluid">
+         <div class="row justify-content-center">
+            <div class="w-100 h-100">
+               <div id="carousel-coment-id" class="carousel slide d-none d-md-block" data-ride="carousel"
+                  data-interval="3000">
+                  <ol class="carousel-indicators">
+                     <li data-target="#carousel-coment-id" data-slide-to="0" class="active"></li>
+                     <li data-target="#carousel-coment-id" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="container-fluid w-75 h-75">
+                           <div class="row">
+                              <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
+                                 <div class="card-body">
+                                    <h5 class="card-title text-center">Cras ornare volutpat blandit.</h5>
+                                    <p class="card-text">
+                                    <h6 class="card-subtitle mb-2 text-muted text-justify">Cras ornare volutpat blandit. Duis vel nisl sed ligula rhoncus facilisis. Morbi faucibus, magna sed hendrerit aliquet, augue turpis condimentum erat, nec lobortis quam magna non nisl. Integer non lorem commodo, lacinia purus at, feugiat elit. Proin condimentum nibh eget consectetur facilisis.</h6>
+                                    </p>
+                                    <div class="row justify-content-between px-3">
+                                       <div>
+                                          <span id="like1" data-like="42"></span>
+                                          <i id="button-like1" class="like far fa-thumbs-up" style="font-size:20px;"></i>
+                                       </div>
+                                       <div>
+                                          <span id="dislike1" data-dislike="15"></span>
+                                          <i id="button-dislike1" class="dislike far fa-thumbs-down" style="font-size:20px;"></i>
 
-         </p>
-         <p class="card-text">
-         <h6 class="card-subtitle mb-2 text-muted">Toasts -> </h6>
-         Na página inicial clicando em qualquer carrinho de compra aparece esse
-         componente, ou clicando em Katana Musashi é possível entrar na página do produto e lá
-         clicar no carrinho que também aparecerá esse componente.
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
+                                 <div class="card-body">
+                                    <h5 class="card-title text-center">Lorem ipsum</h5>
+                                    <p class="card-text">
+                                    <h6 class="card-subtitle mb-2 text-muted text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h6>
+                                    </p>
+                                    <div class="row justify-content-between px-3">
+                                       <div>
+                                          <span id="like2" data-like="148"></span>
+                                          <i id="button-like2" class="like far fa-thumbs-up" style="font-size:20px;"></i>
+                                       </div>
+                                       <div>
+                                          <span id="dislike2" data-dislike="357"></span>
+                                          <i id="button-dislike2" class="dislike far fa-thumbs-down" style="font-size:20px;"></i>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
+                                 <div class="card-body">
+                                    <h5 class="card-title text-center">Aliquam in maximus enim</h5>
+                                    <p class="card-text">
+                                    <h6 class="card-subtitle mb-2 text-muted text-justify">Aliquam nec interdum tortor. In dui neque, aliquam eu viverra at, volutpat eget arcu. Aenean imperdiet augue nec velit molestie, et aliquet sapien ultrices. Donec quis enim dignissim, suscipit est et, porttitor libero. </h6>
+                                    </p>
+                                    <div class="row justify-content-between px-3">
+                                       <div>
+                                          <span id="like3" data-like="94"></span>
+                                          <i id="button-like3" class="like far fa-thumbs-up" style="font-size:20px;"></i>
+                                       </div>
+                                       <div>
+                                          <span id="dislike3" data-dislike="31"></span>
+                                          <i id="button-dislike3" class="dislike far fa-thumbs-down" style="font-size:20px;"></i>
 
-         </p>
-         <p class="card-text">
-         <h6 class="card-subtitle mb-2 text-muted">Modal -> </h6>
-         Da página inicial clicando em Katana Musashi é possível entrar na página do
-         produto e lá clicando em Favoritar ou na estrela aparecerá esse componente.
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="container-fluid w-75 h-75">
+                           <div class="row">
+                              <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
+                                 <div class="card-body">
+                                    <h5 class="card-title text-center">Ut ac feugiat dui.</h5>
+                                    <p class="card-text">
+                                    <h6 class="card-subtitle mb-2 text-muted text-justify">Aenean sapien quam, lacinia at nisi posuere, sagittis porta sapien. Cras ullamcorper vitae ipsum pellentesque malesuada. Phasellus faucibus tortor eget congue laoreet. Suspendisse interdum mauris sit amet diam aliquet facilisis.</h6>
+                                    </p>
+                                    <div class="row justify-content-between px-3">
+                                       <div>
+                                          <span id="like4" data-like="61"></span>
+                                          <i id="button-like4" class="like far fa-thumbs-up" style="font-size:20px;"></i>
+                                       </div>
+                                       <div>
+                                          <span id="dislike4" data-dislike="645"></span>
+                                          <i id="button-dislike4" class="dislike far fa-thumbs-down" style="font-size:20px;"></i>
 
-         </p>
-         <p class="card-text">
-         <h6 class="card-subtitle mb-2 text-muted">Spinner -> </h6>
-         Da página inicial ao clicar no item Nodachi é possível ver esse componentes
-         como se estivesse carregando a página.
-         </p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
+                                 <div class="card-body">
+                                    <h5 class="card-title text-center">Curabitur enim massa,</h5>
+                                    <p class="card-text">
+                                    <h6 class="card-subtitle mb-2 text-muted text-justify">Curabitur enim massa, pellentesque nec aliquet sed, auctor sit amet ex. Proin volutpat, lorem ac gravida blandit, metus quam iaculis lorem, in placerat sem odio quis erat. Proin suscipit vestibulum consectetur. Integer a augue massa.</h6>
+                                    </p>
+                                    <div class="row justify-content-between px-3">
+                                       <div>
+                                          <span id="like5" data-like="14"></span>
+                                          <i id="button-like5" class="like far fa-thumbs-up" style="font-size:20px;"></i>
+                                       </div>
+                                       <div>
+                                          <span id="dislike5" data-dislike="12"></span>
+                                          <i id="button-dislike5" class="dislike far fa-thumbs-down" style="font-size:20px;"></i>
+
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card mr-auto ml-auto m-5 shadow-lg" style="width: 18rem;">
+                                 <div class="card-body">
+                                    <h5 class="card-title text-center">Suspendisse potenti.</h5>
+                                    <p class="card-text">
+                                    <h6 class="card-subtitle mb-2 text-muted text-justify"> Suspendisse posuere fermentum libero, in lobortis nibh euismod et. Duis eget tempus neque. Curabitur ac massa a tellus aliquet facilisis. Ut suscipit nec velit ac pretium.</h6>
+                                    </p>
+                                    <div class="row justify-content-between px-3">
+                                       <div>
+                                          <span id="like6" data-like="5265"></span>
+                                          <i id="button-like6" class="like far fa-thumbs-up" style="font-size:20px;"></i>
+                                       </div>
+                                       <div>
+                                          <span id="dislike6" data-dislike="567"></span>
+                                          <i id="button-dislike6" class="dislike far fa-thumbs-down" style="font-size:20px;"></i>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carousel-coment-id" role="button" data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Anterior</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carousel-coment-id" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Próximo</span>
+                  </a>
+               </div>
+            </div>
+         </div>
       </div>
-   </div>
 
+   </section>
+
+   <hr class="my-4">
 
    <!--Rodapé-->
    <footer class="footer">

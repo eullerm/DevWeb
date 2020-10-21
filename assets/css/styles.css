@@ -220,6 +220,38 @@ body, html {
    color:#705737;
 }
 
+.like {
+
+   background: none;
+   border: none;
+   cursor: pointer;
+
+}
+
+.dislike{
+
+   background: none;
+   border: none;
+   cursor: pointer;
+
+}
+
+.fa-thumbs-up {
+   color: #1abc9c;
+}
+
+.fa-thumbs-down{
+   color: #e74c3c;
+}
+
+.fa-thumbs-up:hover {
+   transform: scale(1.2);
+}
+
+.fa-thumbs-down:hover{
+   transform: scale(1.2);
+}
+
 aside {
    border-radius: 25px !important;
    background: #f3eae044 !important;
