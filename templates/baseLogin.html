@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        Título default
+        {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/all.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    {% block blockstyle %}
+
+    {% endblock %}
+
+</head>
+
+<body class="bg-createuser">
+    {% block navbar %}
+
+    <!--Header-->
+    <header style="padding-bottom: 50px;">
+
+        <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
+            <div class="container-fluid">
+                <!--Lista de produtos-->
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'katanas' %}">Katana</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'nodachis' %}">Nodachi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Wakizashi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tantō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ninja-tō</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shirasaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Daisho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kusarigama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lança</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
+            <div class="container-fluid">
+                <!--LOGO-->
+                <a class="navbar-brand " href="{% url 'index' %}">
+                    <img src="{% static 'images/katana-logo.png' %}" width="30" height="30"
+                        class="d-inline-block align-top" alt="Logotipo loja de katana">
+                    Katanazada VRAU
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ml-auto">
+
+                        <!--Barra de busca para dispositivos pequenos-->
+                        <form class="form-inline">
+                            <div class="md-form mt-4 mt-md-0 d-md-none">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+
+                            </div>
+                        </form>
+
+                        <!--Produtos-->
+                        <li class="nav-item mt-1 mt-md-0 mr-md-3 d-md-none">
+                            <a class="nav-link" href="#">Produtos</a>
+                        </li>
+
+                        <!--Minha conta-->
+                        <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
+
+                            <a class="nav-link dropdown-toggle d-md-none" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                Minha conta
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-around">
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="{% url 'createUser' %}">Inscrever-se</a>
+                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                            href="{% url 'login' %}">Acessar</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Meus pedidos</a>
+                                <a class="dropdown-item" href="#">Lista de desejos</a>
+                            </div>
+                        </li>
+
+                        <!--Barra de busca-->
+                        <form class="form-inline">
+                            <div class="md-form mt-md-0 d-none d-md-block">
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                            </div>
+                        </form>
+
+                        <!--Carrinho de compra-->
+                        <li class="nav-item">
+                            <a href="{% url 'product:productList' %}" class="nav-link mt-1 mt-md-0 mr-md-3">
+                                <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
+                                <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Toast-->
+            <div class="toast" id="myToast" style="position: absolute; top: 100%; right: 8%;">
+                <div class="toast-header">
+                    <strong class="mr-auto"><i class="fa fa-grav"></i>Katana</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <div>Produto adicionado ao carrinho com sucesso
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    {% endblock %}
+
+    {% block body %}
+
+    {% endblock %}
+
+    {% block footer %}
+    <!--Rodapé-->
+    <footer class="footer">
+        <div class="container-fluid">
+
+            <div class="container-fluid">
+                <div class="row justify-content-around">
+                    <div class="col-xl-2 col-lg-2 col-sm-4 ">
+                        <h5>Empresa</h5>
+                        <ul class="list-unstyled">
+                            </i><a href='pages/business/about.html'>Sobre</a></li>
+                            <li><a href='#Empresa'>Institucional</a></li>
+                            <li><a href='#Empresa'>Trabalhe conosco</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-sm-5">
+                        <h5>Ajuda</h5>
+                        <ul class="list-unstyled">
+                            <li><a href='#'>Dúvidas frequentes</a></li>
+                            <li><a href='#'>Atendimentos</a></li>
+                            <li><a href='#'>Mapa do site</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-5">
+                        <h5>Contato</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-user"></i> Euller MACENA</li>
+                            <li><i class="fas fa-phone"></i> (99)99999-9999</li>
+                            <li><i class="fas fa-envelope-square"></i> <a
+                                    href='contato@email.com.br'>contato@email.com.br</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-5">
+                        <h5>Local</h5>
+                        <ul class="list-unstyled">
+                            <li>Lugarnenhum(Knowhere) nº42.</li>
+                            <li>Próximo ao restaurante no fim do universo.</li>
+                            <li><a href='contato@email.com.br'>000-00000xptz</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+
+                    <div class="col-6 col-lg-3">
+                        <a style="text-decoration: none;" href="{% url 'index' %}"><img src="{% static 'images/katana-logo.png' %} " width="30" height="30" class="d-inline-block"
+                            alt="Logotipo loja de katana" loading="lazy">
+                        Katanazada VRAU</a>
+                    </div>
+
+                    <div class="col-4 col-lg-3 text-center">
+                        <i class="fab fa-instagram mr-md-4 mr-2" href="#"></i>
+                        <i class="fab fa-facebook mr-md-4 mr-2" href="#"></i>
+                        <i class="fab fa-twitter mr-md-4 mr-2" href="#"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+    {% endblock %}
+
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mask.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+</body>
+
+</html>
