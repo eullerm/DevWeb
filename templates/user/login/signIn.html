@@ -9,61 +9,62 @@ Cadastro de usuário
 
 
 {% block body %}
- 
-    <section>
 
-        <div class="container-fluid p-5 text-center" style="margin-top: 100px;">
+<section>
 
-            <!--Login para telas md+-->
-            <div class="card d-none d-md-block mr-auto ml-auto bg-translucid shadow-lg" style="width: 40%;">
-                <div class="card-body">
-                    <div class="text-center mr-auto ml-auto">
-                        <form action="" class="form-signin">
-                            <img src="" alt="" class="mb-4">
-                            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-                            <label for="inputEmail" class="sr-only">E-mail</label>
-                            <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required
-                                autofocus>
-                            <label for="inputPassword" class="sr-only">E-mail</label>
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-                            <div class="checkbox my-3">
-                                <label>
-                                    <input type="checkbox" value="remember-me">Manter conectado
-                                </label>
-                            </div>
-                            <button class="btn btn-lg btn-block brown-background lightBrown" type="submit">Conectar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <div class="container-fluid p-5 text-center" style="margin-top: 100px;">
 
-            <!--Login para telas sm- -->
-            <div class="card d-md-none mr-auto ml-auto bg-translucid shadow-lg">
-                <div class="card-body">
-                    <form action="" class="form-signin">
+         <!--Login para telas md+-->
+         <div class="card d-none d-md-block mr-auto ml-auto bg-translucid shadow-lg" style="width: 40%;">
+            <div class="card-body">
+                <div class="text-center mr-auto ml-auto">
+                    <form action="" method="POST" class="form-signin">
                         <img src="" alt="" class="mb-4">
                         <h1 class="h3 mb-3 font-weight-normal">Login</h1>
                         <label for="inputEmail" class="sr-only">E-mail</label>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required
+                            autofocus>
                         <label for="inputPassword" class="sr-only">E-mail</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required autofocus>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
                         <div class="checkbox my-3">
-                                <label>
-                                    <input type="checkbox" value="remember-me">Manter conectado
-                                </label>
-                            </div>
-                            <button class="btn btn-lg btn-block brown-background lightBrown" type="submit">Conectar</button>
-                        
+                            <label>
+                                <input type="checkbox" value="remember-me">Manter conectado
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-block brown-background lightBrown" type="submit">Conectar</button>
                     </form>
                 </div>
             </div>
-
         </div>
 
+        <!--Login para telas sm- -->
+        <div class="card d-md-none mr-auto ml-auto bg-translucid shadow-lg">
+            <div class="card-body">
+                <form action="" method="POST" novalidate class="form-signin">
+                    <img src="" alt="" class="mb-4">
+                    <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+                    <label for="inputEmail" class="sr-only">E-mail</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+                    <label for="inputPassword" class="sr-only">E-mail</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required
+                        autofocus>
+                    <div class="checkbox my-3">
+                        <label>
+                            <input type="checkbox" value="remember-me">Manter conectado
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-block brown-background lightBrown" type="submit">Conectar</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
 
 
 
-    </section>
+
+</section>
 
 {% endblock %}
 

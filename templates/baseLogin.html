@@ -109,15 +109,21 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div class="container-fluid">
                                     <div class="row justify-content-around">
-                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                        <a type="button" class="btn brown-background text-white"
                                             href="{% url 'createUser' %}">Inscrever-se</a>
-                                        <a type="button" class="btn btn-primary brown-background brown-button-letters"
+                                        <a type="button" class="btn brown-background text-white"
                                             href="{% url 'login' %}">Acessar</a>
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Meus pedidos</a>
                                 <a class="dropdown-item" href="#">Lista de desejos</a>
+                                
+                                <a class="dropdown-item" href="{% url 'product:createProduct' %}">Cadastrar produtos</a>
+                                <a class="dropdown-item" href="{% url 'product:productList' %}">Pesquisar produtos</a>
+                                
+                                <a class="dropdown-item" href="{% url 'category:createCategory' %}">Cadastrar categoria</a>
+                                <a class="dropdown-item" href="{% url 'category:categoryList' %}">Pesquisar categorias</a>
                             </div>
                         </li>
 

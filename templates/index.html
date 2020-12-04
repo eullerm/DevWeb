@@ -81,10 +81,10 @@ Loja de katana
          {% for product in bestSeller%}
          <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card mb-3">
-               <img src="{% static 'images/products/' %}{{product.image}}" alt="{{product.category}} a venda">
+               <img src="{{product.image.url}}" alt="{{product.category}} a venda">
                <div class="card-body ">
                   <div class="text-center">
-                     <a href="#">
+                     <a href="{% url 'product:showSpecificProduct' product.id product.slug %}">
                         <h5 class="card-title">{{product.name}}</h5>
                      </a>
                   </div>

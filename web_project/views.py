@@ -22,8 +22,20 @@ def nodachis(request):
     print(nodachisList)
     return render(request, 'products/productsPages.html', {"products": nodachisList, 'category': category})
 
+def all(request):
+    all = Product.objects.order_by('name')
+    print(all)
+    return render(request, 'products/productsPages.html', {"products": all})
+
 def createUser(request):
     return render(request, 'user/create/createUser.html')
 
 def login(request):
     return render(request, 'user/login/signIn.html')
+
+def about(request):
+    return render(request, 'business/about.html')
+
+
+def checkout(request):
+    return render(request, 'payment/checkout.html')

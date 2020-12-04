@@ -9,223 +9,228 @@ Loja de katana
 
 {% block navbar%}
 
-    <!--Header-->
-   <header style="padding-bottom: 50px;">
+<!--Header-->
+<header style="padding-bottom: 50px;">
 
 
 
-    <!--Filtro para telas pequenas-->
-    <div class="btn-group nav2 fixed-top">
-       <button class="btn bg-brown2 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          Filtro
-       </button>
-       <div class="dropdown-menu bg-brown2">
-          <div class="container-fluid">
-             <div class="row justify-content-between">
-                <div class="col-6">
-                   <h5>Preço</h5>
-                   <div class="container px-3 py-1">
-                      <div class="slidecontainer pb-2">
-                         <span>Min</span><br>
-                         <input type="range" min="1" max="100" value="30" class="slider" id="Size"><br>
-                         <span>Max</span><br>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="Size"><br>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-6">
-                   <h5>Tamanho</h5>
-                   <div class="container px-3 py-1">
-                      <div class="slidecontainer pb-2">
-                         <span>Min</span><br>
-                         <input type="range" min="1" max="100" value="30" class="slider" id="Size"><br>
-                         <span>Max</span><br>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="Size"><br>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-6">
-                   <h5>Cores</h5>
-                   <div class="container px-3 py-1 pb-2">
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Preto">
-                         <label class="form-check-label" for="inlineCheckbox1">Preto</label><br>
-                      </div>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Vermelho">
-                         <label class="form-check-label" for="inlineCheckbox2">Vermelho</label><br>
-                      </div>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Azul">
-                         <label class="form-check-label" for="inlineCheckbox3">Azul</label><br>
-                      </div>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Verde">
-                         <label class="form-check-label" for="inlineCheckbox3">Verde</label><br>
-                      </div>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Lilás">
-                         <label class="form-check-label" for="inlineCheckbox3">Lilás</label><br>
-                      </div>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Dourado">
-                         <label class="form-check-label" for="inlineCheckbox3">Dourado</label><br>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-6">
-                   <h5>Aços</h5>
-                   <div class="container px-3 py-1 pb-2">
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="aço1060">
-                         <label class="form-check-label" for="inlineCheckbox1">Aço 1060</label>
-                      </div><br>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="aço1075">
-                         <label class="form-check-label" for="inlineCheckbox2">Aço 1075</label>
-                      </div><br>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açodobrado">
-                         <label class="form-check-label" for="inlineCheckbox3">Aço Dobrado</label>
-                      </div><br>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="aço1095">
-                         <label class="form-check-label" for="inlineCheckbox3">Aço 1095</label>
-                      </div><br>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açot10">
-                         <label class="form-check-label" for="inlineCheckbox3">Aço 9260</label>
-                      </div><br>
-                      <div class="form-check form-check-inline">
-                         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açodamasco">
-                         <label class="form-check-label" for="inlineCheckbox3">Aço Damasco</label>
-                      </div><br>
-                   </div>
-                </div>
+   <!--Filtro para telas pequenas-->
+   <div class="btn-group nav2 fixed-top">
+      <button class="btn bg-brown2 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+         aria-expanded="false">
+         Filtro
+      </button>
+      <div class="dropdown-menu bg-brown2">
+         <div class="container-fluid">
+            <div class="row justify-content-between">
+               <div class="col-6">
+                  <h5>Preço</h5>
+                  <div class="container px-3 py-1">
+                     <div class="slidecontainer pb-2">
+                        <span>Min</span><br>
+                        <input type="range" min="1" max="100" value="30" class="slider" id="Size"><br>
+                        <span>Max</span><br>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="Size"><br>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-6">
+                  <h5>Tamanho</h5>
+                  <div class="container px-3 py-1">
+                     <div class="slidecontainer pb-2">
+                        <span>Min</span><br>
+                        <input type="range" min="1" max="100" value="30" class="slider" id="Size"><br>
+                        <span>Max</span><br>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="Size"><br>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-6">
+                  <h5>Cores</h5>
+                  <div class="container px-3 py-1 pb-2">
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Preto">
+                        <label class="form-check-label" for="inlineCheckbox1">Preto</label><br>
+                     </div>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Vermelho">
+                        <label class="form-check-label" for="inlineCheckbox2">Vermelho</label><br>
+                     </div>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Azul">
+                        <label class="form-check-label" for="inlineCheckbox3">Azul</label><br>
+                     </div>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Verde">
+                        <label class="form-check-label" for="inlineCheckbox3">Verde</label><br>
+                     </div>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Lilás">
+                        <label class="form-check-label" for="inlineCheckbox3">Lilás</label><br>
+                     </div>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Dourado">
+                        <label class="form-check-label" for="inlineCheckbox3">Dourado</label><br>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-6">
+                  <h5>Aços</h5>
+                  <div class="container px-3 py-1 pb-2">
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="aço1060">
+                        <label class="form-check-label" for="inlineCheckbox1">Aço 1060</label>
+                     </div><br>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="aço1075">
+                        <label class="form-check-label" for="inlineCheckbox2">Aço 1075</label>
+                     </div><br>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açodobrado">
+                        <label class="form-check-label" for="inlineCheckbox3">Aço Dobrado</label>
+                     </div><br>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="aço1095">
+                        <label class="form-check-label" for="inlineCheckbox3">Aço 1095</label>
+                     </div><br>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açot10">
+                        <label class="form-check-label" for="inlineCheckbox3">Aço 9260</label>
+                     </div><br>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="açodamasco">
+                        <label class="form-check-label" for="inlineCheckbox3">Aço Damasco</label>
+                     </div><br>
+                  </div>
+               </div>
 
-             </div>
-          </div>
-       </div>
-    </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
-    <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
-       <div class="container-fluid">
-          <!--Lista de produtos-->
-          <div class="collapse navbar-collapse">
-             <ul class="navbar-nav mr-auto ml-auto">
-                <li class="nav-item">
-                   <a class="nav-link" href="{% url 'katanas' %}">Katana</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link " href="{% url 'nodachis' %}">Nodachi</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">Wakizashi</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">Tantō</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">Ninja-tō</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">Shirasaya</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">Daisho</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">Kusarigama</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">Lança</a>
-                </li>
-             </ul>
-          </div>
-       </div>
-    </nav>
+   <nav class="navbar d-none d-md-block navbar-expand-md navbar-light bg-brown2 nav2 fixed-top">
+      <div class="container-fluid">
+         <!--Lista de produtos-->
+         <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'katanas' %}">Katana</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link " href="{% url 'nodachis' %}">Nodachi</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Wakizashi</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Tantō</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Ninja-tō</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Shirasaya</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Daisho</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Kusarigama</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Lança</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
-       <div class="container-fluid">
-          <!--LOGO-->
-          <a class="navbar-brand " href="{% url 'index' %}">
-             <img src="{% static 'images/katana-logo.png' %}" width="30" height="30" class="d-inline-block align-top"
-                alt="Logotipo loja de katana">
-             Katanazada VRAU
-          </a>
+   <nav class="navbar navbar-expand-md navbar-dark bg-brown1 nav1 fixed-top">
+      <div class="container-fluid">
+         <!--LOGO-->
+         <a class="navbar-brand " href="{% url 'index' %}">
+            <img src="{% static 'images/katana-logo.png' %}" width="30" height="30" class="d-inline-block align-top"
+               alt="Logotipo loja de katana">
+            Katanazada VRAU
+         </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
-             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-          </button>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
 
-          <div class="collapse navbar-collapse" id="menu">
-             <ul class="navbar-nav ml-auto">
+         <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ml-auto">
 
-                <!--Barra de busca para dispositivos pequenos-->
-                <form class="form-inline">
-                   <div class="md-form mt-4 mt-md-0 d-md-none">
-                      <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+               <!--Barra de busca para dispositivos pequenos-->
+               <form class="form-inline">
+                  <div class="md-form mt-4 mt-md-0 d-md-none">
+                     <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
 
-                   </div>
-                </form>
+                  </div>
+               </form>
 
-                <!--Produtos-->
-                <li class="nav-item mt-1 mt-md-0 mr-md-3 d-md-none">
-                   <a class="nav-link" href="#">Produtos</a>
-                </li>
+               <!--Produtos-->
+               <li class="nav-item mt-1 mt-md-0 mr-md-3 d-md-none">
+                  <a class="nav-link" href="#">Produtos</a>
+               </li>
 
-                <!--Minha conta-->
-                <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
+               <!--Minha conta-->
+               <li class="nav-item dropdown mt-1 mt-md-0 mr-md-3">
 
-                   <a class="nav-link dropdown-toggle d-md-none" href="#" id="navbarDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fa fa-user"></i>
-                   </a>
-                   <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="navbarDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fa fa-user"></i>
-                      Minha conta
-                   </a>
-                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <div class="container-fluid">
-                         <div class="row justify-content-around">
-                            <a type="button" class="btn btn-primary brown-background brown-button-letters"
-                               href="{% url 'createUser' %}">Inscrever-se</a>
-                            <a type="button" class="btn btn-primary brown-background brown-button-letters"
-                               href="{% url 'login' %}">Acessar</a>
-                         </div>
-                      </div>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Meus pedidos</a>
-                      <a class="dropdown-item" href="#">Lista de desejos</a>
-                   </div>
-                </li>
+                  <a class="nav-link dropdown-toggle d-md-none" href="#" id="navbarDropdown" role="button"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fa fa-user"></i>
+                  </a>
+                  <a class="nav-link dropdown-toggle d-none d-md-block" href="#" id="navbarDropdown" role="button"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fa fa-user"></i>
+                     Minha conta
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <div class="container-fluid">
+                        <div class="row justify-content-around">
+                           <a type="button" class="btn brown-background text-white"
+                              href="{% url 'createUser' %}">Inscrever-se</a>
+                           <a type="button" class="btn brown-background text-white" href="{% url 'login' %}">Acessar</a>
+                        </div>
+                     </div>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="#">Meus pedidos</a>
+                     <a class="dropdown-item" href="#">Lista de desejos</a>
 
-                <!--Barra de busca-->
-                <form class="form-inline">
-                   <div class="md-form mt-md-0 d-none d-md-block">
-                      <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
-                   </div>
-                </form>
+                     <a class="dropdown-item" href="{% url 'product:createProduct' %}">Cadastrar produtos</a>
+                     <a class="dropdown-item" href="{% url 'product:productList' %}">Pesquisar produtos</a>
 
-                <!--Carrinho de compra-->
-                <li class="nav-item">
-                   <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
-                      <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
-                      <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
-                   </a>
-                </li>
-             </ul>
-          </div>
-          
-       </div>
-    </nav>
+                     <a class="dropdown-item" href="{% url 'category:createCategory' %}">Cadastrar categoria</a>
+                     <a class="dropdown-item" href="{% url 'category:categoryList' %}">Pesquisar categorias</a>
+                  </div>
+               </li>
+
+               <!--Barra de busca-->
+               <form class="form-inline">
+                  <div class="md-form mt-md-0 d-none d-md-block">
+                     <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                  </div>
+               </form>
+
+               <!--Carrinho de compra-->
+               <li class="nav-item">
+                  <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
+                     <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
+                     <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
+                  </a>
+               </li>
+            </ul>
+         </div>
+
+      </div>
+   </nav>
 
 
 
- </header>
+</header>
 
 {% endblock %}
 

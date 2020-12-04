@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls.base import reverse
 
 class Category(models.Model):
 
@@ -14,3 +15,5 @@ class Category(models.Model):
         return self.name
     
     
+    def getAbsoluteUrl(self):
+        return reverse('cart:productListPerCategory', args=[self.slug])

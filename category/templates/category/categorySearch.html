@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Pesquisa de categorias
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+
+    <div class="mb-4" style="padding-top: 100px;">
+        <h5 class="mb-3">Pesquisa de categorias</h5>
+        <hr class="mt-0">
+    </div>
+
+    <form action="" method="GET" class="mb-4">
+        <div class="form-group row" style="margin-bottom: 10px;">
+            <label for="id_name" class="col-lg-2 col-form-label font-weigth-bold">Nome</label>
+            <div class="col-lg-10">
+                {{form.name}}
+                <!--
+            <input type="text" name="name" id="id_name" class="form-control form-control-sm" maxlength="100">
+            -->
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-10 offset-lg-2">
+                <button class="submit" class="btn brown-background text-white">
+                    <div class="d-flex align-items-center">
+                        <img width="30" height="30" src="{% static 'images/katana-logo.png' %}" class="mr-2">Pesquisar
+                    </div>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div style="min-height: 212px">
+
+        {% if categorys %}
+
+
+        <h5 class="mb-3">Lista de Categorias</h5>
+
+        <table style="width: 20%;" class="table table-striped table-sm table-bordered table-responsive mb-4">
+            <thead>
+                <tr>
+                    <th class="text-center">Categoria</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categorys%}
+                <tr>
+                    <td width="20%" class="text-center align-middle">
+                        <a style="color: #000000 " href="{% url 'category:showCategory' category.id %}">
+                            {{category.name}}
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="container" style="font-size: 14px; margin-bottom:20px">
+            {% if categorys.has_other_pages %}
+
+            <ul class="pagination">
+                {% if categorys.has_previous %}
+                <li class="page-item"><a class="page-link"
+                        href="?page={{categorys.previous_page_number}}&name={{name}}">Anterior</a></li>
+                {% else %}
+                <li class="page-item disable"><a class="page-link" href="#" tabindex="-1">Anterior</a></li>
+                {% endif %}
+
+                {% for i in categorys.paginator.page_range %}
+                {% if categorys.number == i %}
+                <li class="page-item active"><a class="page-link" href="#">{{ i }}</a>
+                    <span class="sr-only">(Página {{ i }})</span>
+                </li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ i }}&name={{name}}">{{ i }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if categorys.has_next %}
+                <li class='page-item'><a class='page-link'
+                        href='?page={{ categorys.next_page_number }}&name={{name}}'>Próximo</a></li>
+                {% else %}
+                <li class='page-item disable'><a class='page-link' href='#' tabindex='-1'>Próximo</a></li>
+                {% endif %}
+
+            </ul>
+
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Exibição de categoria
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="mb-4" style="padding-top: 100px;">
+        <h5 class="mb-3">Exibição de categoria</h5>
+        <hr class="mt-0">
+    </div>
+
+    {% if messages %}
+
+    <div class="mb-3">
+        {% for message in messages %}
+        <ul class="list-group rounded">
+            <li style="padding-top: 7px; padding-bottom: 7px;" class="list-group-item list-group-itrm-info">
+                {{message}}
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+
+    {% endif %}
+    <div class="row mb-2" style="min-height: 256px">
+        <div class="col-lg-9 col-md-8">
+            <div class="row">
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Categoria: </div>
+                <div class="col-xl-10 col-lg-9 col-8">{{category.name}}</div>
+            </div>
+        </div>
+    </div>
+
+    {% if category.id %}
+    <div class="form-group row" style='margin-bottom: 180px'>
+        <div class="col-12">
+            <div class="form-inline">
+                <a href="{% url 'category:editCategory' category.id %}" class="btn brown-background text-white mr-3">
+                    Editar
+                </a>
+                <form action="{% url 'category:removeCategory' %}" method="POST">
+                    {% csrf_token %}
+                    <button type='submit' class="btn btn btn-danger">
+                        Remover
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

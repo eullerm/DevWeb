@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Cadastro de Categoria
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="mb-4" style="padding-top: 100px;">
+        <h5 class="mb-3">Cadastro de categoria</h5>
+        <hr class="mt-0">
+    </div>
+
+    <form action="{% url 'category:createCategory' %}" method="POST" class="text-center pb-4" novalidate>
+
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idName' class='col-xl-3 font-weight-bold'> Categoria: </label>
+                    <div class="col-xl-9">
+                        {{form.name}}
+                        {#<input type='text' name='name' maxlength='100' required='' id='idName'></input>#}
+                        {% if form.name.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.name.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-xl-9">
+                <div class="row">
+                    <div class="offset-xl-2 col-xl-10">
+                        {% csrf_token %}
+                        <button class="btn brown-background text-white" type='submit' id='button'>{% if 'category_id' in request.session %} Alterar {% else %}Cadastrar{% endif %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+{% endblock %}

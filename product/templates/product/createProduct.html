@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Cadastro de produto
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="mb-4" style="padding-top: 100px;">
+        <h5 class="mb-3">Cadastro de Produto</h5>
+        <hr class="mt-0">
+    </div>
+
+    <form action="{% url 'product:createProduct' %}" method="POST" class="text-center pb-4" 
+    enctype='multipart/form-data' novalidate>
+
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idName' class='col-xl-3 font-weight-bold'> Nome: </label>
+                    <div class="col-xl-9">
+                        {{form.name}}
+                        {#<input type='text' name='name' maxlength='100' required='' id='idName'></input>#}
+                        {% if form.name.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.name.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idDescription' class='col-xl-3 font-weight-bold'> Descrição: </label>
+                    <div class="col-xl-9">
+                        {{form.description}}
+                        {#<input type='text' name='description' maxlength='100' required='' id='idDescription'></input>#}
+                        {% if form.description.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.description.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idCategory' class='col-xl-3 font-weight-bold'> Categoria: </label>
+                    <div class="col-xl-9">
+                        {{form.category}}
+                        {% comment %}
+                        <select name='category' required='' id='idCategory'>
+                            <option value='' selected=''>.....................</option>
+                            <option value='1'>Katana</option>
+                            <option value='2'>Nodachi</option>
+                            <option value='3'>Wakizashi</option>
+                            <option value='4'>Tanto</option>
+                            <option value='5'>Ninjato</option>
+                            <option value='6'>Shirasaya</option>
+                            <option value='7'>Daisho</option>
+                            <option value='8'>Kusarigama</option>
+                            <option value='9'>Lança</option>
+                        </select>
+                        {% endcomment %}
+
+                        {% if form.category.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.category.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idResgisteredDate' class='col-xl-3 font-weight-bold'> Data de cadastro: </label>
+                    <div class="col-xl-9">
+                        {{form.registeredDate}}
+                        {#<input type='text' name='registeredDate' maxlength='100' required='' id='idResgisteredDate'></input>#}
+                        {% if form.registeredDate.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.registeredDate.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idPrice' class='col-xl-3 font-weight-bold'> Preço: </label>
+                    <div class="col-xl-9">
+                        {{form.price}}
+                        {#<input type='text' name='price' maxlength='100' required='' id='idPrice'></input>#}
+                        {% if form.price.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.price.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idImage' class='col-xl-3 font-weight-bold'> Imagem: </label>
+                    <div class="col-xl-9">
+                        {{form.image}}
+                        {#<input type='text' name='image' maxlength='100' required='' id='idImage'></input>#}
+                        {% if form.image.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.image.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idSteel' class='col-xl-3 font-weight-bold'> Aço: </label>
+                    <div class="col-xl-9">
+                        {{form.steel}}
+                        {% comment %}
+                        <select name='steel' required='' id='idSteel'>
+                            <option value='' selected=''>------Selecione uma categoria------</option>
+                            <option value='1'>1095</option>
+                            <option value='2'>1075</option>
+                            <option value='3'>1095</option>
+                            <option value='4'>9260</option>
+                            <option value='5'>damasco</option>
+                            <option value='6'>dobrado</option>
+                        </select>
+                        {% endcomment %}
+
+                        {% if form.steel.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.steel.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for='idColor' class='col-xl-3 font-weight-bold'> Cor: </label>
+                    <div class="col-xl-9">
+                        {{form.color}}
+                        {#<input type='text' name='color' maxlength='100' required='' id='idColor'></input>#}
+                        {% if form.color.errors %}
+                        <div class="alert alert-danger mb-0" role='alert' style='padding-top:2px; padding-bottom: 2px'>
+                            {% for error in form.color.errors %}
+                            <small>{{error}}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-9">
+                        <div class="form-check pl-0 mt-xl-0 mt-2">
+                            {{form.available}}
+                            {# <input type="checkbox" name='available' id='idAvailable'> #}
+                            <label for='idAvailable' class='col-xl-3 font-weight-bold'> Disponivel </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-9">
+                        <div class="form-check pl-0 mt-xl-0 mt-2">
+                            {{form.bestSeller}}
+                            {# <input type="checkbox" name='bestSeller' id='idBestSeller'> #}
+                            <label for='idBestSeller' class='col-xl-4 font-weight-bold'> Mais vendido </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-xl-9">
+                <div class="row">
+                    <div class="offset-xl-2 col-xl-10">
+                        {% csrf_token %}
+                        <button class="btn brown-background text-white" type='submit' id='button'>{% if 'product_id' in request.session %} Alterar {% else %}Cadastrar{% endif %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+
+
+
+{% endblock %}
+
+{% block domready %}
+
+    $('#idRegisteredDate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-3:+8",
+        dateFormat: 'dd/mm/YY',
+        dayNames:['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+        dayNamesMin:['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        dayNamesShor:['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        nextText: 'Próximo',
+        prevText: 'Anterior',
+        showOn: 'focus',
+
+    })
+
+    $('#idRegisteredDate').mask('00/00/0000')
+
+
+{% endblock %}

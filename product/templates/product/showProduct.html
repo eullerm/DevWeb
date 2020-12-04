@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Pesquisa de produtos
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="mb-4" style="padding-top: 100px;">
+        <h5 class="mb-3">Cadastra de Produtos</h5>
+        <hr class="mt-0">
+    </div>
+
+    {% if messages %}
+
+    <div class="mb-3">
+        {% for message in messages %}
+        <ul class="list-group rounded">
+            <li style="padding-top: 7px; padding-bottom: 7px;" class="list-group-item list-group-itrm-info">
+                {{message}}
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+
+    {% endif %}
+    <div class="row mb-2" style="min-height: 256px">
+        <div class="col-lg-3 col-md-4">
+            {% if product.image %}
+            <img src="{{product.image.url}}" alt="{{product.name}}" class="mr-3"
+                style='width: 210px;'>
+            {% else %}
+            <div class="text-md-center mb-md-6 mb-2">
+                Imagem não disponivel
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-lg-9 col-md-8">
+            <div class="row">
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Categoria</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.category}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Nome</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.name}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Descrição</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.description}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Preço</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.price}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Data de registro</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.registeredDate}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Disponível</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.available}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Mais vendidos</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.bestSeller}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Aço</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.steel}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Cor</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.color}}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Categoria</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{product.category}}</div>
+            </div>
+        </div>
+    </div>
+
+    {% if product.id %}
+    <div class="form-group row" style='margin-bottom: 180px'>
+        <div class="col-12">
+            <div class="form-inline">
+                <a href="{% url 'product:editProduct' product.id %}" class="btn brown-background text-white mr-3">
+                    Editar
+                </a>
+                <form action="{% url 'product:removeProduct' %}" method="POST">
+                    {% csrf_token %}
+                    <button type='submit' class="btn btn btn-danger">
+                        Remover
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
