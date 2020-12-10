@@ -39,72 +39,221 @@ $(function () {
 
    })
 
-   $("i.fa-thumbs-up, i.fa-thumbs-down").click(function(){
-      if($(this).hasClass("fa-thumbs-up")){
+   $("i.fa-thumbs-up, i.fa-thumbs-down").click(function () {
+      if ($(this).hasClass("fa-thumbs-up")) {
 
-         if($(this).hasClass("far")){
-         
+         if ($(this).hasClass("far")) {
+
             $(this).removeClass("far ").addClass("fas")
             let idLike = $(this).parent().children("span:eq(0)").attr('id')
-            let like = $("#"+idLike).data("like")
-            $("#"+idLike).text(like+1)
+            let like = $("#" + idLike).data("like")
+            $("#" + idLike).text(like + 1)
 
             $(this).parent().parent().children("div:eq(1)").children("i:eq(0)").removeClass("fas ").addClass("far ")
             let idDislike = $(this).parent().parent().children("div:eq(1)").children("span:eq(0)").attr('id')
-            
-            let dislike = $("#"+idDislike).data("dislike")
-            $("#"+idDislike).text(dislike)
-         
-         }else{
+
+            let dislike = $("#" + idDislike).data("dislike")
+            $("#" + idDislike).text(dislike)
+
+         } else {
 
             $(this).removeClass("fas").addClass("far")
             let idLike = $(this).parent().children("span:eq(0)").attr('id')
-            let like = $("#"+idLike).data("like")
-            $("#"+idLike).text(like)
+            let like = $("#" + idLike).data("like")
+            $("#" + idLike).text(like)
 
          }
 
-      }else if($(this).hasClass("fa-thumbs-down")){
+      } else if ($(this).hasClass("fa-thumbs-down")) {
 
-         if($(this).hasClass("far")){
+         if ($(this).hasClass("far")) {
 
             $(this).removeClass("far ").addClass("fas")
 
             let idDislike = $(this).parent().children("span:eq(0)").attr('id')
-            let dislike = $("#"+idDislike).data("dislike")
-            $("#"+idDislike).text(dislike+1)
+            let dislike = $("#" + idDislike).data("dislike")
+            $("#" + idDislike).text(dislike + 1)
 
             $(this).parent().parent().children("div:eq(0)").children("i:eq(0)").removeClass("fas ").addClass("far ")
             let idLike = $(this).parent().parent().children("div:eq(0)").children("span:eq(0)").attr('id')
             console.log(idLike)
-            let like = $("#"+idLike).data("like")
-            $("#"+idLike).text(like)
+            let like = $("#" + idLike).data("like")
+            $("#" + idLike).text(like)
 
-         }else{
+         } else {
 
             $(this).removeClass("fas").addClass("far")
             let idDislike = $(this).parent().children("span:eq(0)").attr('id')
-            let dislike = $("#"+idDislike).data("dislike")
-            $("#"+idDislike).text(dislike)
+            let dislike = $("#" + idDislike).data("dislike")
+            $("#" + idDislike).text(dislike)
 
          }
 
       }
    })
 
-   $("i.fa-thumbs-up").each(function(index){
+   $("i.fa-thumbs-up").each(function (index) {
       let id = $(this).parent().children("span:eq(0)").attr('id')
 
-      let text = $("#"+id).data("like")
-      $("#"+id).text(text)
+      let text = $("#" + id).data("like")
+      $("#" + id).text(text)
    })
 
-   $("i.fa-thumbs-down").each(function(index){
-      let id = $(this).parent().children("span:eq(0)").attr('id')    
+   $("i.fa-thumbs-down").each(function (index) {
+      let id = $(this).parent().children("span:eq(0)").attr('id')
 
-      let text = $("#"+id).data("dislike")
-      $("#"+id).text(text)
+      let text = $("#" + id).data("dislike")
+      $("#" + id).text(text)
    })
+
+   $(".buy").click(function () {
+      let buttonBuy = this
+      let form = $(buttonBuy).prev()
+      var num = form.find("input[name='qty']").val()
+      if (num != 0) {
+         num = +num + 1
+      }
+      else {
+         num = 1
+      }
+      form.find("input[name='qty']").val(num)
+      let url = form.attr('action')
+      let formData = form.serializeArray()
+      $.post(url, formData, function (answer) {
+
+
+         let qty = $(answer).find("#qty").text()
+         let cartPrice = $(answer).find("#cartPrice").text()
+         let totalPrice = $(answer).find("#totalPrice").text()
+         if (qty == 1) {
+            $("#total-1").text(qty + " item")
+            $("#total-2").text(" " + qty + " item" + " ")
+         }
+         else {
+            $("#total-1").text(qty + " itens")
+            $("#total-2").text(" " + qty + " itens" + " ")
+         }
+         $("#price1").text("R$" + cartPrice)
+         $("#price2").text("R$" + cartPrice)
+         span.find("strong.totalPrice").text("R$" + totalPrice)
+
+      })
+   })
+
+   $(".more").click(function () {
+      this.blur()
+      var input = $(this).parent().prev()
+      var num = +input.val() + 1
+      if (num < 100) {
+         input.val(num)
+         let form = $(this).parent().parent().parent()
+         let url = form.attr('action')
+         let formData = form.serializeArray()
+         $.post(url, formData, function (answer) {
+            console.log('O botão MAIS foi clicado')
+            let qty = $(answer).find("#qty").text()
+            let cartPrice = $(answer).find("#cartPrice").text()
+            let totalPrice = $(answer).find("#totalPrice").text()
+            if (qty == 1) {
+               $("#total-1").text(qty + " item")
+               $("#total-2").text(" " + qty + " item" + " ")
+            }
+            else {
+               $("#total-1").text(qty + " itens")
+               $("#total-2").text(" " + qty + " itens" + " ")
+            }
+            $("#price1").text("R$" + cartPrice)
+            $("#price2").text("R$" + cartPrice)
+            span.find("strong.totalPrice").text("R$" + totalPrice)
+         })
+      }
+      else {
+         return
+      }
+   })
+
+   $(".less").click(function () {
+      this.blur()
+      var input = $(this).parent().next()
+      var num = +input.val() - 1
+      if (num <= 0) {
+         num = 0
+      }
+      input.val(num)
+      let form = $(this).parent().parent().parent()
+      let url = form.attr('action')
+      let formData = form.serializeArray()
+      $.post(url, formData, function (answer) {
+
+         console.log('O botão MENOS foi clicado')
+         let qty = $(answer).find("#qty").text()
+         let cartPrice = $(answer).find("#cartPrice").text()
+         let totalPrice = $(answer).find("#totalPrice").text()
+         if (num <= 0) {
+
+            form.append('<input type="hidden" name="qty" value="0">')
+            
+            $("#total-1").text(qty + " itens")
+            $("#total-2").text(" " + qty + " itens" + " ")
+            let card = form.parent().parent().parent().parent()
+            card.fadeTo("slow", 0.3, function () {
+               $(this).prev().remove()
+               $(this).remove()
+
+               let cartPrice = $(answer).find("#cartPrice").text()
+               $("#price1").text("R$" + cartPrice)
+               $("#price2").text("R$" + cartPrice)
+
+            })
+
+         }
+         else if (qty == 1) {
+            $("#total-1").text(qty + " item")
+            $("#total-2").text(" " + qty + " ites" + " ")
+         }
+         else {
+            $("#total-1").text(qty + " itens")
+            $("#total-2").text(" " + qty + " itens" + " ")
+         }
+         $("#price1").text("R$" + cartPrice)
+         $("#price2").text("R$" + cartPrice)
+         span.find("strong.totalPrice").text("R$" + totalPrice)
+
+      })
+
+   })
+
+   $("#card").on("click", "a.remove", function () {
+
+      console.log("Botão remover clicado")
+      let form = $(this).parent().parent()
+      form.append('<input type="hidden" name="qty" value="0">')
+      let card = form.parent().parent().parent()
+      let url = form.attr("action")
+      let formData = form.serializeArray()
+      $.post(url, formData, function (answer) {
+
+         card.fadeTo("slow", 0.3, function () {
+            $(this).prev().remove()
+            $(this).remove()
+
+            let qty = $(answer).find("#qty").text()
+            let cartPrice = $(answer).find("#cartPrice").text()
+            if (qty == 1) {
+               $("#total-1").text(qty + " item")
+               $("#total-2").text(" " + qty + " ites" + " ")
+            }
+            else {
+               $("#total-1").text(qty + " itens")
+               $("#total-2").text(" " + qty + " itens" + " ")
+            }
+            $("#price1").text("R$" + cartPrice)
+            $("#price2").text("R$" + cartPrice)
+
+         })
+      })
+   })
+
 
 })
 

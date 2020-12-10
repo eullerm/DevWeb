@@ -18,7 +18,6 @@ Loja de katana
 
 {% endblock %}
 
-
 {% block body %}
 
 <!--Pergunta de favorito-->
@@ -42,6 +41,7 @@ Loja de katana
     </div>
 </div>
 
+
 <!--Produto-->
 <section>
     <div class="container-fluid p-5" style="margin-top: 100px; min-height: 960px;">
@@ -55,10 +55,8 @@ Loja de katana
                 <div class="row px-3">
                     <div class="container col-6">
                         <div class="fotorama">
-                            <img src="{{product.image.url}}" alt=""
-                                class="img-fluid">
-                            <img src="{{product.image.url}}" alt=""
-                                class="img-fluid">
+                            <img src="{{product.image.url}}" alt="" class="img-fluid">
+                            <img src="{{product.image.url}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="container text-justify Dosis col-6">
@@ -72,8 +70,17 @@ Loja de katana
                         </p>
                     </div>
 
-                    <h5 class="container col-12 text-right pt-4 Raleway">R${{product.price}}<a class="show-toast" href="#"><i
-                                class="fa fa-shopping-cart px-3 align-self-center" style="font-size:20px;"></i></a>
+                    <h5 class="container col-12 text-right pt-4 Raleway">
+                        R${{product.price}}
+                        <a class="show-toast" href="#">
+                            <form action="{% url 'cart:attCart' %}" class="form-inline" method='POST' nonvalidate>
+                                {% csrf_token %}
+                                {{form.product_id}}
+                                {{form.qty}}
+                            </form>
+                            <i class="fa fa-shopping-cart px-3 align-self-center buy" type="cart"
+                                style="font-size:20px;"></i>
+                        </a>
                     </h5>
 
                     <div class="container text-justify Dosis pt-5">
@@ -119,8 +126,16 @@ Loja de katana
                     </p>
 
 
-                    <h5 class=" container col-12 text-right pt-4 Raleway">R${{product.price}}<a class="show-toast"><i
-                                class="fa fa-shopping-cart px-3" style="font-size:20px;"></i></a></h5>
+                    <h5 class=" container col-12 text-right pt-4 Raleway">R${{product.price}}
+                        <a class="show-toast">
+                            <form action="{% url 'cart:attCart' %}" class="form-inline" method='POST' nonvalidate>
+                                {% csrf_token %}
+                                {{form.product_id}}
+                                {{form.qty}}
+                            </form>
+                            <i class="fa fa-shopping-cart px-3 buy" type="cart" style="font-size:20px;"></i>
+                        </a>
+                    </h5>
 
                     <div class="container text-justify Dosis pt-5">
                         <hr class="my-4">
@@ -130,8 +145,15 @@ Loja de katana
                         </p>
                     </div>
 
-                    <h5 class=" container col-12 text-right pt-4 Raleway">R${{product.price}}<a class="show-toast"><i
-                                class="fa fa-shopping-cart px-3" style="font-size:20px;"></i></a></h5>
+                    <div class="container col-12 text-right pt-4">
+                        <h5 class="Quicksand">
+                            <a data-toggle="modal" data-target="#favorite" href="">
+                                Favoritar
+                                <i class="fa fa-star px-3" style="font-size:20px;"></i>
+                            </a>
+                        </h5>
+
+                    </div>
 
                 </div>
             </div>

@@ -1,0 +1,8 @@
+{% load humanize %}
+
+<div>
+    <div id = 'qty'>{{qty | intcomma }}</div>
+    <div id = 'cartPrice'>{{cartPrice | floatformat:2 | intcomma}}</div>
+    <div id = 'totalPrice'>{{totalPrice | floatformat:2 | intcomma}}</div>
+    <div id = 'qtyTotal'>{{qtyTotal | intcomma}}</div>
+</div>

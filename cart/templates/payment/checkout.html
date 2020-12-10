@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% load  static %}
+{% load humanize%}
+
+{% block title %}
+Loja de katana
+{% endblock %}
+
+{% block body %}
+
+<body class="bg-light">
+    <!--Formulario para finalizar a compra-->
+    <section>
+
+        <div class="container-fluid p-5" style="margin-top: 100px;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 order-md-2 mb-4">
+                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted">Seu carrinho</span>
+                            <span class="badge bg-brown2 badge-pill">{% if qty == 1 %} {{ qty }} item {% else %} {{qty}} itens
+                                {% endif %}</span>
+                        </h4>
+                        <ul class="list-group mb-3">
+                            {% for item, form in products%}
+                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                <div>
+                                    <h6 class="my-0">{{item.product.name}}
+                                        <small class="text-muted">({{form.qty.value}})</small></h6>
+                                    <small class="text-muted">{{item.product.steel}}</small>
+                                </div>
+                                <span class="text-muted">R${{item.product.price | floatformat:2 | intcomma}}</span>
+                            </li>
+                            {% endfor %}
+
+                            <li class="list-group-item d-flex justify-content-between bg-light">
+                                <div class="text-success">
+                                    <h6 class="my-0">Codigo promocional</h6>
+                                    <small>Pague4leve3</small>
+                                </div>
+                                <span class="text-success">+$42</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Total</span>
+                                <strong>R${{cartPrice | floatformat:2 | intcomma}}</strong>
+                            </li>
+                        </ul>
+
+                        <form class="card p-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Codigo promocional">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn text-white brown-background">Confirmar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3">Finalizar compra</h4>
+                        <form class="needs-validation" novalidate="">
+
+                            <div class="mb-3">
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control" id="name" placeholder="" value="" required="">
+                                <div class="invalid-feedback">
+                                    Campo requerido.
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="address">Endereço de entrega</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Disc World 42"
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="complement">Complemento</label>
+                                    <input type="text" class="form-control" id="complement">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5 mb-3">
+                                    <label for="state">Estado</label>
+                                    <select class="custom-select d-block w-100" id="state" required="">
+                                        <option value="">...</option>
+                                        <option value="IJU">IJU</option>
+                                        <option value="ST">ST</option>
+                                        <option value="WAN">WAN</option>
+                                        <option value="NA">NA</option>
+                                        <option value="DIE">DIE</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Selecione um estado valido.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="county">Municipio</label>
+                                    <input type="text" class="form-control" id="county" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="zip">CEP</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="same-address"
+                                    id="same-address" checked="" required="">
+                                <label class="custom-control-label" for="same-address">Endereço de cobrança é o mesmo do
+                                    de entrega</label>
+                            </div>
+
+                            <hr class="mb-4">
+
+                            <h4 class="mb-3">Pagamento</h4>
+
+                            <div class="row my-3 mx-2">
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        checked="" required="">
+                                    <label class="custom-control-label" for="credit">Cartão de crédito</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="debit">Cartão de debito</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="paypal">Paypal</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="boleto" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="boleto">Boleto</label>
+                                </div>
+                                <div class="custom-control custom-radio mx-2">
+                                    <input id="transference" name="paymentMethod" type="radio"
+                                        class="custom-control-input" required="">
+                                    <label class="custom-control-label" for="transference">Transferência bancária
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-name">Nome no cartão</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                    <small class="text-muted">Nome do jeito que esta no cartão de crédito</small>
+                                    <div class="invalid-feedback">
+                                        Nome no cartão de crédito requerido.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-number">Número no cartão</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Número do cartão de crédito requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">Validade</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder=""
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Validade requeridaa.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Codigo de segurança requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="recieve-email">
+                                <label class="custom-control-label" for="recieve-email">Receber email com promoções
+                                    futuras</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="NF-e">
+                                <label class="custom-control-label" for="NF-e">Receber NF-e</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save-info">
+                                <label class="custom-control-label" for="save-info">Salvar dados para compras
+                                    futuras</label>
+                            </div>
+                            <hr class="mb-4">
+                            <button class="btn brown-background text-white btn-lg btn-block" type="button"
+                                id="confirmPayment">Confirmar compra</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+{% endblock %}

@@ -217,14 +217,26 @@ Loja de katana
 
                <!--Carrinho de compra-->
                <li class="nav-item">
-                  <a href="#" class="nav-link mt-1 mt-md-0 mr-md-3">
+                  <a href="{% url 'cart:showCart' %}" class="nav-link mt-1 mt-md-0 mr-md-3">
                      <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
-                     <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
+                     <span class="badge bg-brown1" style="vertical-align: top" id='total-1'>{% if qty == 1 %} {{ qty }} item {% else %} {{qty}} itens {% endif %}</span> </i>
                   </a>
                </li>
             </ul>
          </div>
-
+         <!--Toast-->
+         <div class="toast" id="myToast" style="position: absolute; top: 100%; right: 8%;">
+            <div class="toast-header">
+                <strong class="mr-auto" id="toastProduct"><i class="fa fa-grav"></i>Katana</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                <div>Produto adicionado ao carrinho com sucesso
+                </div>
+            </div>
+        </div>
       </div>
    </nav>
 

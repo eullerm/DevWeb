@@ -1,15 +1,16 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from product.models import Product
 from django.core.paginator import Paginator
-from product.forms import FormSearchProduct, ProductForm
+from product.forms import FormSearchProduct, ProductAjaxForm, ProductForm
 from django.template.defaultfilters import slugify
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
+from cart.cart import Cart
+from cart.forms import QtyForm
+from django.http import JsonResponse
+from django.template import loader
 
-# @login_required(login_url='/authentication/login')
-# @staff_member_required('login_ur='authentication/login')
-# @user_passes_test(lambda u: u.is_superuser)
-@user_passes_test(lambda u: u.is_staff)
+
 def productList(request):
     
     form = FormSearchProduct(request.GET)
@@ -30,13 +31,11 @@ def productList(request):
         raise ValueError("Ocorreu um erro inesperado ao tentar recuperar um produto.")
 
 
-@user_passes_test(lambda u: u.is_staff)
 def bestSeller(request):
     productList = Product.objects.filter(bestSeller__icontaines=True).order_by('name')
     return productList
 
 
-@user_passes_test(lambda u: u.is_staff)
 def createProduct(request):
 
     if request.POST:
@@ -73,13 +72,11 @@ def createProduct(request):
     return render(request, 'product/createProduct.html',{'form': productForm})
 
 
-@user_passes_test(lambda u: u.is_staff)
 def showProduct(request, id):
     product = get_object_or_404(Product, pk=id)
     request.session['product_id_del'] = id
     return render(request, 'product/showProduct.html', {'product': product})
 
-@user_passes_test(lambda u: u.is_staff)
 def editProduct(request, id):
     product = get_object_or_404(Product, pk=id)
 
@@ -89,7 +86,6 @@ def editProduct(request, id):
     
     return render(request, 'product/createProduct.html', {'form': product_form})
 
-@user_passes_test(lambda u: u.is_staff)
 def removeProduct(request):
     product_id = request.session.get('product_id_del')
     product = get_object_or_404(Product, pk=product_id)
@@ -104,4 +100,11 @@ def removeProduct(request):
 def showSpecificProduct(request, id, productSlug):
     product = get_object_or_404(Product, pk=id)
     request.session['product_id_del'] = id
-    return render(request, 'products/specificProduct/specificProduct.html', {'product': product})
+
+
+    cart = Cart(request)
+    qty = cart.getTotalQty(product.id)
+    form = QtyForm(initial={'qty': qty, 'product_id': product.id})
+
+
+    return render(request, 'products/specificProduct/specificProduct.html', {'product': product, 'form': form})

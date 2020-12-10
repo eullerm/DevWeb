@@ -26,5 +26,8 @@ class Product(models.Model):
     def getAvailable(self):
         return "Sim" if self.available else "Não"
 
+    def getBestSeller(self):
+        return "Sim" if self.available else "Não"
+
     def getAbsoluteUrl(self):
         return reverse('cart:showProduct', args=[self.id, self.slug])

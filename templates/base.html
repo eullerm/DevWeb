@@ -118,12 +118,14 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Meus pedidos</a>
                                 <a class="dropdown-item" href="#">Lista de desejos</a>
-                                
+
                                 <a class="dropdown-item" href="{% url 'product:createProduct' %}">Cadastrar produtos</a>
                                 <a class="dropdown-item" href="{% url 'product:productList' %}">Pesquisar produtos</a>
-                                
-                                <a class="dropdown-item" href="{% url 'category:createCategory' %}">Cadastrar categoria</a>
-                                <a class="dropdown-item" href="{% url 'category:categoryList' %}">Pesquisar categorias</a>
+
+                                <a class="dropdown-item" href="{% url 'category:createCategory' %}">Cadastrar
+                                    categoria</a>
+                                <a class="dropdown-item" href="{% url 'category:categoryList' %}">Pesquisar
+                                    categorias</a>
                             </div>
                         </li>
 
@@ -136,19 +138,19 @@
 
                         <!--Carrinho de compra-->
                         <li class="nav-item">
-                            <a href="{% url 'product:productList' %}" class="nav-link mt-1 mt-md-0 mr-md-3">
+                            <a href="{% url 'cart:showCart' %}" class="nav-link mt-1 mt-md-0 mr-md-3">
                                 <i class="fa fa-shopping-cart" style="font-size:20px;color:whitesmoke"></i>
-                                <span class="badge bg-brown1" style="vertical-align: top">9</span> </i>
+                                <span class="badge bg-brown1" style="vertical-align: top" id='total-1'>{% if qty == 1 %}
+                                    {{ qty }} item {% else %} {{ qty }} itens {% endif %}</span> </i>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-
             <!--Toast-->
             <div class="toast" id="myToast" style="position: absolute; top: 100%; right: 8%;">
                 <div class="toast-header">
-                    <strong class="mr-auto"><i class="fa fa-grav"></i>Katana</strong>
+                    <strong class="mr-auto" id="toastProduct"><i class="fa fa-grav"></i>Katana</strong>
                     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -168,7 +170,7 @@
     {% block aside %}
 
     {% endblock %}
-    
+
     {% block body %}
 
     {% endblock %}
@@ -226,9 +228,10 @@
                 <div class="row justify-content-between">
 
                     <div class="col-6 col-lg-3">
-                        <a style="text-decoration: none;" href="{% url 'index' %}"><img src="{% static 'images/katana-logo.png' %} " width="30" height="30" class="d-inline-block"
-                            alt="Logotipo loja de katana" loading="lazy">
-                        Katanazada VRAU</a>
+                        <a style="text-decoration: none;" href="{% url 'index' %}"><img
+                                src="{% static 'images/katana-logo.png' %} " width="30" height="30"
+                                class="d-inline-block" alt="Logotipo loja de katana" loading="lazy">
+                            Katanazada VRAU</a>
                     </div>
 
                     <div class="col-4 col-lg-3 text-center">
@@ -252,14 +255,9 @@
     <script src="{% static 'js/popper.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
-    <!--<script>
-        $(document).ready(function(){
+    {% block script %}
 
-            {% block domready %}
-
-            {% endblock %}
-        });
-    </script>-->
+    {% endblock %}
 
 
 </body>

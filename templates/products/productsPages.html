@@ -19,7 +19,8 @@ Pesquisa de produtos
          </h3>
          <hr class="my-4">
          <div class='row'>
-            {% for product in products %}
+            {% for product, form in list %}
+
             <div class="col-lg-6 col-md-12">
                <div class="card mb-3 mx-auto" style="width: 18rem;">
 
@@ -35,7 +36,12 @@ Pesquisa de produtos
                      <hr class="my-4">
                      <div class="row justify-content-between px-3">
                         <a class="show-toast" href="#">
-                           <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                           <form action="{% url 'cart:attCart' %}" class="form-inline" method='POST' nonvalidate>
+                              {% csrf_token %}
+                              {{form.product_id}}
+                              {{form.qty}}
+                           </form>
+                           <i class="fa fa-shopping-cart buy" type='button' style="font-size:20px;"></i>
                         </a>
                         <p class="card-text">
                            R${{product.price}}
