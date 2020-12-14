@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'product',
     'category',
     'cart',
+    'createAjax'
 ]
 
 MIDDLEWARE = [

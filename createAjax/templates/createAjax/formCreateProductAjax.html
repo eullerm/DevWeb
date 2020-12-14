@@ -1,0 +1,70 @@
+<form id="productForm" style="width: 100%;" action='.' class="ajaxForm" data-url='{{ request.build_absolute_uri|safe }}'
+    method="post" novalidate>
+    <div class="row">
+        {% csrf_token %}
+        <!--{% for field in form %}
+        <div class="form-group col-4" style="padding: 10px;">
+            <label class="col-12">{{ field.label }}{% for error in field.errors %}
+                <small class="text-primary text-center">{{ error }}</small>
+                {% endfor %}</label>
+
+            <div style="padding: 10px;">
+                {{ field }}
+            </div>
+        </div>
+        {% endfor %}-->
+
+        <div class="form-group col-4" style="padding: 10px;">
+            <label class="col-12">Nome
+                {% for error in form.name.errors %}
+                <small class="text-primary text-center">{{ error }}</small>
+                {% endfor %}
+            </label>
+
+            <div style="padding: 10px;">
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="form-group col-4" style="padding: 10px;">
+            <label class="col-12">Categoria
+                {% for error in form.category.errors %}
+                <small class="text-primary text-center">{{ error }}
+
+                </small>
+                {% endfor %}
+            </label>
+
+            <div style="padding: 10px;">
+                {{ form.category }}
+            </div>
+        </div>
+        <div class="form-group col-4" style="padding: 10px;">
+            <label class="col-12">Preço
+                {% for error in form.price.errors %}
+                <small class="text-primary text-center">{{ error }}
+
+                </small>
+                {% endfor %}
+            </label>
+
+            <div style="padding: 10px;">
+                {{ form.price }}
+            </div>
+        </div>
+        <div class="form-group col-4" style="padding: 10px;">
+            <label class="col-12">Quantidade
+                {% for error in form.quantity.errors %}
+                <small class="text-primary text-center">{{ error }}
+
+                </small>
+                {% endfor %}
+            </label>
+
+            <div style="padding: 10px;">
+                {{ form.quantity }}
+            </div>
+        </div>
+    </div>
+    <input type="submit" class="btn brown-background text-white" value="Cadastrar produto"
+        style="width: 220px; height: 40px;" />
+</form>

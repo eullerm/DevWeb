@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Cadastro de produto
+
+{% endblock %}
+
+{% block body %}
+
+<div id="formulario" class="row mb-4 text-center" style="padding-top: 200px; padding-left: 30px; padding-right: 30px;">
+  {% include 'createAjax/formCreateProductAjax.html'%}
+</div>
+
+
+<div class="container-fluid" style="min-height: 450px">
+  <table style="width: 100%;" class="table table-striped table-sm" id="productTable">
+    <thead>
+      <tr>
+        <th class="text-center">Produto</th>
+        <th class="text-center">Categoria</th>
+        <th class="text-center">Preço</th>
+        <th class="text-center">Quantidade</th>
+        <th class="text-center">Remover</th>
+      </tr>
+    </thead>
+    <tbody id="tableInfo">
+
+      {% for product in products %}
+      {% include 'createAjax/tableRow.html' %}
+      {% endfor %}
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan='4'>
+          <h4>Total Em Estoque</h4>
+        </td>
+        <td id="totalEmEstoque" class="h4">R$ {{total}}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+{% endblock %}
+{% block script %}
+<script>
+  $(document).ready(function () {
+    var $myForm = $('#ajaxForm')
+    var $mytable = $('.productTable')
+
+    $("#productForm").submit(function (event) {
+      event.preventDefault()
+      var formData = $(this).serialize()
+      $.ajax({
+        type: "POST",
+        url: '{% url "createAjax:createProductAjax" %}',
+        data: formData,
+        success: function (data) {
+          console.log("oioioi")
+          if (data['formValido'] == true) {
+
+            $('#tableInfo').append(data['row'])
+            $('#formulario').trigger('reset')
+
+            $('#totalEmEstoque').html("R$ " + data['total'])
+          } else {
+            console.log(data)
+            debugger
+            $('#formulario').html(data)
+          }
+        },
+
+      })
+    })
+    $("#productTable").on("blur", ".quantity", function (e) {
+      let valor = $(this).val()
+      if (valor < 0 || valor > 99) {
+        console.log(this)
+        $(this).focus()
+        return
+      }
+      var serializedData = $(this).parent().serialize();
+      var tr = $(this).parent().parent().parent()
+
+      $.ajax({
+        type: 'POST',
+        url: '{% url "createAjax:updateProductAjax" %}',
+        data: serializedData,
+        success: function (data) {
+          console.log(data['row'])
+          $('#totalEmEstoque').html("R$ " + data['total'])
+          tr.replaceWith(data['row'])
+        },
+      })
+    })
+    $("#productTable").on("click", ".remover", function (e) {
+      var serializedData = $(this).parent().serialize();
+      console.log(serializedData)
+      var arg = $(this).attr('data-id');
+      var tr = $(this).parent().parent().parent()
+      $.ajax({
+        type: 'POST',
+        url: '/createAjax/removeProductAjax/' + arg + '/',
+        data: serializedData,
+        success: function (data) {
+          console.log("O item foi excluído")
+          $('#totalEmEstoque').html("R$ " + data['total'])
+          tr.replaceWith(data['row'])
+        },
+      })
+    })
+    function handleFormSuccess(data, textStatus, jqXHR) {
+      console.log(data)
+      console.log(textStatus)
+      console.log(jqXHR)
+
+      $myForm.reset(); // reset form data
+    }
+
+    function handleFormError(jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR)
+      console.log(textStatus)
+      console.log(errorThrown)
+    }
+  })
+</script>
+{% endblock %}
+<!--
+<script>
+  $(document).ready(function(){
+    var $myForm = $('.ajaxForm')
+    var $mytable= $('.productTable')
+    $myForm.submit(function(event){
+      event.preventDefault()
+      var $formData = $(this).serialize()
+      var $thisURL = window.location.href // or set your own url
+      $.ajax({
+        method: "POST",
+        url: $thisURL,
+        data: $formData,
+        success: handleFormSuccess,
+        error: handleFormError,
+      })
+    })
+
+    function handleFormSuccess(data, textStatus, jqXHR){
+      console.log(data)
+      console.log(textStatus)
+      console.log(jqXHR)
+      $myForm.reset(); // reset form data
+    }
+
+    function handleFormError(jqXHR, textStatus, errorThrown){
+      console.log(jqXHR)
+      console.log(textStatus)
+      console.log(errorThrown)
+    }
+  })
+</script>-->

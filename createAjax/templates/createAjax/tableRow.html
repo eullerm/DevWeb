@@ -1,0 +1,20 @@
+
+<tr>
+    <td class="text-center">{{product.name}}</td>
+    <td class="text-center">{{product.category}}</td>
+    <td class="text-center">{{product.price}}</td>
+    <td class="text-center">
+        <form method="POST">
+            {% csrf_token %}
+            {{product.quantity.quantity}}
+            {{product.quantity.productId}}
+        </form>
+    </td>
+    <td class="text-center">
+    <form method="POST" novalidate>
+    {% csrf_token %}
+        {{product.quantity.productId}}
+    <button class="btn btn-danger remover" type="button" data-id="{{product.id}}" tabindex="-1">Remover</button>
+    </form>
+    </td>
+</tr>

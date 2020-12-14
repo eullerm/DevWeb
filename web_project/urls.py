@@ -16,6 +16,8 @@ urlpatterns = [
     path("payment/checkout/", views.checkout, name='checkout'),
     path("business/about/", views.about, name='about'),
     path("", include(('cart.urls', 'cart'), namespace='cart')),
+    path('createAjax/', include('createAjax.urls')),
+
 
 ]
 
